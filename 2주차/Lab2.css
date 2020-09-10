@@ -1,0 +1,17 @@
+div{
+    text-align: center;
+}
+.myClass1{
+    font-size: small;
+    background-color: #34eb49;
+}
+
+.myClass2{
+    font-size: xx-large;
+    background-color: #ff0000;
+}
+
+.myId{
+    font-size: medium;
+    background-color: #95fcf4;
+}
