@@ -74,6 +74,7 @@ footer{
     }
     #ar1,#ar2{
         height: 50%;
+        width: 100%;
 
     }
 
@@ -81,13 +82,14 @@ footer{
         height: 160px;
         display: flow-root;
         float: left;
-        width: 200%;
+        width: 100%;
 
 
     }
 
     #ar3,#ar4{
         height: 50%;
+        width: 100%;
 
 
     }

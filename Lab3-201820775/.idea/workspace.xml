@@ -20,17 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbbdd770-be17-4b3b-b26a-1cc110558170" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab2-201820775/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/.idea/2주차.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/Lab2-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/Lab2-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/Lab2-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2주차/Lab2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab3.css" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600413434177</updated>
       <workItem from="1600413435513" duration="12600000" />
+      <workItem from="1600448539322" duration="470000" />
     </task>
     <servers />
   </component>
@@ -93,6 +85,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="779" y="94" key="#Inspections" timestamp="1600445488397">
