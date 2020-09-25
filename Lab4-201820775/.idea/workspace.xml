@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbbdd770-be17-4b3b-b26a-1cc110558170" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab4-201820775/Lab4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab4-201820775/Lab4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab4-201820775/Lab4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5830c37d-4aa0-4143-8b5c-a6f92a62235c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Lab4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3-201820775/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +35,14 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1hfsMHTRveVsT1ECoYFSXBzjDXI" />
+  <component name="ProjectId" id="1i0VQ39zox7sCHKH9d5ji8ZW1k2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,7 +52,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab4-201820775" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -64,15 +65,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bbbdd770-be17-4b3b-b26a-1cc110558170" name="Default Changelist" comment="" />
-      <created>1600413434177</created>
+      <changelist id="5830c37d-4aa0-4143-8b5c-a6f92a62235c" name="Default Changelist" comment="" />
+      <created>1601044476894</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600413434177</updated>
-      <workItem from="1600413435513" duration="12600000" />
-      <workItem from="1600448539322" duration="470000" />
-      <workItem from="1600616154611" duration="177000" />
-      <workItem from="1601044352799" duration="3464000" />
+      <updated>1601044476894</updated>
+      <workItem from="1601044478051" duration="10683000" />
     </task>
     <servers />
   </component>
@@ -89,16 +87,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="779" y="94" key="#Inspections" timestamp="1600445488397">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="779" y="94" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1600445488397" />
-    <state x="762" y="174" key="FileChooserDialogImpl" timestamp="1601044471669">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="762" y="174" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601044471669" />
   </component>
 </project>
