@@ -4,7 +4,7 @@ let arTag = document.getElementById("arc");
 let cnt =0;
 let cntObj = document.createElement("div");
 
-memoBtn.addEventListener("click",function(){
+function myFunction(){
     cnt ++;
     let newMemo = document.createElement("article");
     let txtarea = document.querySelector("textarea");
@@ -15,4 +15,6 @@ memoBtn.addEventListener("click",function(){
     cntObj.innerHTML=cnt;
     arTag.appendChild(cntObj);
 
-})
+};
+
+memoBtn.addEventListener('click',myFunction);
