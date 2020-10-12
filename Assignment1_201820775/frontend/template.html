@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1><a href="/">Node.js</a></h1>
+    <ul>
+        <li>%</li>
+    </ul>
+    <p>Create Directory</p>
+    <form action="http://localhost:3000/mkdir" method="POST">
+        <input type="text" name="dirname">
+        <input type="submit" value="create directory">
+    </form>
+
+    <p>Modify File</p>
+    <form action="http://localhost:3000/editfile" method="POST">
+        <input type="text" name="filename">
+        <textarea type="text" name="filecontent"></textarea>
+        <input type="submit" value="modify file">
+    </form>
+    
+    <p>Rename</p>
+    <form action="http://localhost:3000/rename" method="POST">
+        <input type="hidden" name="oldname">
+        <input type="submit" value="rename" name="renamein">
+    </form>
+
+    <h2>?</h2>
+    <p>$</p>
+
+    <script type="text/javascript">
+
+        function movedir(link){
+            const moveform = document.createElement('form');
+            moveform.method = 'post';
+            moveform.action = "http://localhost:3000/cd";
+
+        }
+
+        function readfile2(link){
+            const readfileform = document.createElement('form');
+            readfileform.method='post';
+            readfileform.action = "http://localhost:3000/readfile2";
+            <!--readfile2 를 readfile로 바꿀거임-->
+
+        }
+
+        function deletedir(link){
+            const deletedirform = document.createElement('form');
+            deletedirform.method = 'post';
+            deletedirform.action = "http://localhost:3000/rmdir";
+
+        }
+
+        function deletefile(link){
+            const deletefileform = document.createElement('form');
+            deletefileform.method = 'post';
+            deletefileform.action = "http://localhost:3000/rmFile";
+        }
+
+        function renamereq(link){
+            <!--보류..-->
+            const renamebutton = document.getElementsByName("renamein");
+
+
+        }
+
+
+
+
+
+        function readfile(link){
+            const form = document.createElement('form');
+            form.method = 'post';
+            form.action = "http://localhost:3000/readfile";
+            const hiddenField= document.createElement('input');
+            hiddenField.type='hidden';
+            hiddenField.name='file_name';
+            hiddenField.value = link.textContent;
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</body>
+</html>
