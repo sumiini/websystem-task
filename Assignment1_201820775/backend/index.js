@@ -7,25 +7,75 @@ var cur_path = path.resolve('../fs');
 
 var file_name="";
 var file_content="";
+var dir_name="";
 
 var app= http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url,true).query;
     var pathname = url.parse(_url,true).pathname;
+
     if(pathname==='/')
     {
+
         fs.readFile("../frontend/template.html",function(err,tmp1){
+
+
+
+
             fs.readdir(cur_path,function(err,data){
+
+
                 lsinfo="";
                 data.forEach(function(element){
-                    lsinfo+="<li onclick='readfile(this);'>"+element+"</li>";
+
+                    fs.stat(cur_path,function(err,stat){
+                        if(err){
+                            console.error(err);
+                        }
+                        else{
+                            if(stat.isDirectory()==true) {
+                                lsinfo+="<li onclick='readfile(this);'>"+element+"<button onclick='deletedir()'>delete</button><button onclick='renamereq()'>rename</button></li>";
+                            }
+                            if(stat.isFile()==true) {
+                                lsinfo+="<li onclick='readfile(this);'>"+element+"<button onclick='deletefile()'>delete</button><button onclick='renamereq()'>rename</button></li>";
+
+                            }
+                            let html = tmp1.toString().replace('%',lsinfo);
+                            html = html.replace('?',file_name);
+                            html = html.replace('$',file_content);
+                            response.writeHead(200,{'Content-Type' : 'text/html'});
+                            response.end(html);
+                        }
+                    });
                 });
-                let html = tmp1.toString().replace('%',lsinfo);
-                html = html.replace('?',file_name);
-                html = html.replace('$',file_content);
-                response.writeHead(200,{'Content-Type' : 'text/html'});
-                response.end(html);
+
+
+
             });
+        });
+
+    }
+
+    else if(pathname==='/editfile'){
+
+    }
+
+    else if(pathname==='/cd'){
+        var body = '';
+        request.on('data',function(data){
+            body = body + data;
+        });
+
+        request.on('end',function(){
+            var post = qs.parse(body);
+            dir_name = post.dir_name;
+            cur_path = path.join(cur_path,dir_name);
+
+            fs.move(dir_name,cur_path,function(err,data){
+                response.writeHead(302,{Location:`http://localhost:3000/{dir_name}`});
+                response.end('success');
+            });
+
         });
     }
 
@@ -51,6 +101,51 @@ var app= http.createServer(function(request,response){
 
         });
     }
+
+    else if(pathname==='/mkdir'){
+        var body = '';
+        request.on('data',function(data){
+            body = body + data;
+        });
+
+        request.on('end',function(){
+            var post = qs.parse(body);
+            var dir_name = post.dirname;
+            var file_path = path.join(cur_path,dir_name);
+
+            fs.mkdir(file_path,{recursive:true},function(err){
+                response.writeHead(302,{Location:`http://localhost:3000/`});
+                response.end('success');
+            });
+
+        });
+    }
+
+    else if(pathname==='/rmdir'){
+        var body='';
+        request.on('data',function(data){
+            body = body + data;
+        });
+        request.on('end',function(){
+            var post = qs.parse(body);
+            var dir_name = post.dirname;
+
+            fs.rmdir('dir_name',function(err){
+                response.writeHead(302,{Location:`http://localhost:3000/`});
+                response.end('success');
+            });
+        });
+
+    }
+
+    else if(pathname==='/rmFile'){
+
+    }
+
+    else if(pathname==='/rename'){
+
+    }
+
     else if(pathname==='/writefile'){
         var body='';
         request.on('data',function(data){
@@ -58,7 +153,7 @@ var app= http.createServer(function(request,response){
         });
         request.on('end',function(){
             var post = qs.parse(body);
-            var title = post.title;
+            var title = post.finame;
             var description = post.description;
             var file_path = path.join(cur_path,title);
             fs.writeFile(file_path,description,function(err,data){
@@ -67,6 +162,7 @@ var app= http.createServer(function(request,response){
             });
         });
     }
+
 });
 
 app.listen(3000);

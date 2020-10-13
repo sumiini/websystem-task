@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77ecf4cb-895d-42e4-aa63-143b8649fc71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fs/Ciceroe.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fs/Kafka.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fs/Lorem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fs/Pangram.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4-201820775/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602487739499</updated>
       <workItem from="1602487740693" duration="3866000" />
-      <workItem from="1602504347344" duration="14174000" />
+      <workItem from="1602504347344" duration="19062000" />
+      <workItem from="1602556195432" duration="23251000" />
     </task>
     <servers />
   </component>

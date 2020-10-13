@@ -4,75 +4,159 @@
     <meta charset="UTF-8">
     <title>Node.js</title>
     <meta charset="utf-8">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        /* The Modal (background) */
+        .dirmodal ,.fmodal,.remodal,.edimodal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .dirmodal-content,.fmodal-content,.remodal-content,.edimodal-content {
+            background-color: #fefefe;
+            border: 1px solid #888;
+        }
+
+        /* The Close Button */
+        .mkdirclose,.mkfclose,.reclose,.ediclose {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .mkdirclose,.mkfclose,.reclose,.ediclose:hover,
+        .mkdirclose,.mkfclose,.reclose,.ediclose:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1><a href="/">Node.js</a></h1>
+
+    <button id="mkbtn">mkdir</button>
+    <button id="fbtn">mkfile</button>
     <ul>
         <li>%</li>
     </ul>
-    <p>Create Directory</p>
-    <form action="http://localhost:3000/mkdir" method="POST">
-        <input type="text" name="dirname">
-        <input type="submit" value="create directory">
-    </form>
-
-    <p>Modify File</p>
-    <form action="http://localhost:3000/editfile" method="POST">
-        <input type="text" name="filename">
-        <textarea type="text" name="filecontent"></textarea>
-        <input type="submit" value="modify file">
-    </form>
-    
-    <p>Rename</p>
-    <form action="http://localhost:3000/rename" method="POST">
-        <input type="hidden" name="oldname">
-        <input type="submit" value="rename" name="renamein">
-    </form>
 
     <h2>?</h2>
     <p>$</p>
+    ${control}
+
+
+    <div>
+        <div id="dirMyModal" class="dirmodal">
+            <div class="dirmodal-content">
+                <span class="mkdirclose">&times;</span>
+                <p>Create Directory</p>
+                <form action="http://localhost:3000/mkdir" method="POST">
+                    <input type="text" name="dirname">
+                    <input type="submit" value="create directory">
+                </form>
+            </div>
+
+        </div>
+        
+        <div id="fMyModal" class="fmodal">
+            <div class="fmodal-content">
+                <span class="mkfclose">&times;</span>
+                <p>Create File</p>
+                <form action="http://localhost:3000/writefile" method="POST">
+                    <input type="text" name="finame">
+                    <textarea name="description" type="text"></textarea>
+                    <input type="submit" value="create file">
+                </form>
+            </div>
+            
+        </div>
+
+        <div id="ediMyModal" class="edimodal">
+            <div class="edimodal-content">
+                <span class="ediclose">&times;</span>
+                <p>Modify File</p>
+                <form action="http://localhost:3000/editfile" method="POST">
+                    <input type="text" name="filename">
+                    <textarea type="text" name="filecontent"></textarea>
+                    <input type="submit" value="modify file">
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="reMyModal" class="remodal">
+            <div class="remodal-content">
+                <span class="reclose">&times;</span>
+                <p>Rename</p>
+                <form action="http://localhost:3000/rename" method="POST">
+                    <input type="hidden" name="oldname">
+                    <input type="submit" value="rename" name="renamein">
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
 
     <script type="text/javascript">
+
+        var dirmodal = document.getElementById("dirMyModal");
+        var filmodal = document.getElementById("fMyModal");
+        // Get the button that opens the modal
+        var mkbtn = document.getElementById("mkbtn");
+        var fbtn = document.getElementById("fbtn");
+
+        // Get the <span> element that closes the modal
+        var dirspan = document.getElementsByClassName("mkdirclose")[0];
+        var fspan = document.getElementsByClassName("mkfclose")[0];
+
+        // When the user clicks the button, open the modal
+        mkbtn.onclick = function() {
+            dirmodal.style.display = "block";
+        }
+
+        fbtn.onclick = function(){
+            filmodal.style.display="block";
+        }
+
+        fspan.onclick = function(){
+            filmodal.style.display="none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        dirspan.onclick = function() {
+            dirmodal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == dirmodal) {
+                dirmodal.style.display = "none";
+            }
+            if(event.target==filmodal){
+                filmodal.style.display="none";
+            }
+        }
 
         function movedir(link){
             const moveform = document.createElement('form');
             moveform.method = 'post';
             moveform.action = "http://localhost:3000/cd";
-
         }
-
-        function readfile2(link){
-            const readfileform = document.createElement('form');
-            readfileform.method='post';
-            readfileform.action = "http://localhost:3000/readfile2";
-            <!--readfile2 를 readfile로 바꿀거임-->
-
-        }
-
-        function deletedir(link){
-            const deletedirform = document.createElement('form');
-            deletedirform.method = 'post';
-            deletedirform.action = "http://localhost:3000/rmdir";
-
-        }
-
-        function deletefile(link){
-            const deletefileform = document.createElement('form');
-            deletefileform.method = 'post';
-            deletefileform.action = "http://localhost:3000/rmFile";
-        }
-
-        function renamereq(link){
-            <!--보류..-->
-            const renamebutton = document.getElementsByName("renamein");
-
-
-        }
-
-
-
-
-
         function readfile(link){
             const form = document.createElement('form');
             form.method = 'post';
@@ -84,6 +168,23 @@
             form.appendChild(hiddenField);
             document.body.appendChild(form);
             form.submit();
+        }
+        function deletedir(link){
+            const deletedirform = document.createElement('form');
+            deletedirform.method = 'post';
+            deletedirform.action = "http://localhost:3000/rmdir";
+        }
+
+        function deletefile(link){
+            const deletefileform = document.createElement('form');
+            deletefileform.method = 'post';
+            deletefileform.action = "http://localhost:3000/rmFile";
+        }
+        function renamereq(link){
+            <!--보류..-->
+            const renamebutton = document.getElementsByName("renamein");
+
+
         }
     </script>
 </body>
