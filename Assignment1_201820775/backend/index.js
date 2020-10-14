@@ -29,8 +29,9 @@ var app= http.createServer(function(request,response){
                     var size = stat.size.toString();
 
                     if(stat.isDirectory()){
-                        lsinfo += "<li onclick='movedir(this);' value="+element+">"+element+"<button onclick='deletedir(this);'value="+element+">";
-                        lsinfo+="deletedir"+"</button><button onclick='renamereq(this);'value="+element+">"+"rename"+"</button>"+'__'+size+'__'+time+"</li>";
+                        lsinfo += "<li onclick='movedir(this,";
+                        lsinfo+= element+");' value="+element+">"+element+"<button onclick='deletedir(this);'value="+element+">";
+                        lsinfo+="deletedir"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</li>";
 
 
 
@@ -38,7 +39,7 @@ var app= http.createServer(function(request,response){
                     else if(stat.isFile()){
                         lsinfo += "<li onclick='editf(this);'value="+element+">"+element+"<button onclick='deletefile(this);' value="+element+">";
 
-                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+"rename"+"</button>"+'__'+size+'__'+time+"</li>";
+                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</li>";
 
 
                     }
@@ -133,9 +134,10 @@ var app= http.createServer(function(request,response){
             var post = qs.parse(body);
             var del_dirname =post.del_dirname;
             var rmdirpath = path.join(cur_path,del_dirname);
-            fs.rmdir(del_dirname,function (err){
 
-                response.writeHead(302,{Location:`/`});
+            fs.rmdir(rmdirpath,function (err){
+
+                response.writeHead(302,{Location:"http://localhost:3000/"});
                 response.end('success');
                 console.log(post);
 

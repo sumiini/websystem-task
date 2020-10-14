@@ -165,7 +165,7 @@
             moveform.appendChild(hiddenmove);
             document.body.appendChild(moveform);
             moveform.submit();
-
+            console.log(link);
 
         }
         function readfile(link){
@@ -190,7 +190,6 @@
             hiddenField.type = 'hidden';
             hiddenField.name = "del_dirname";
             hiddenField.value = link.value;
-
             deletedirform.appendChild(hiddenField);
             document.body.appendChild(deletedirform);
             deletedirform.submit();
