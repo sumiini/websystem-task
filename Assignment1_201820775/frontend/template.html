@@ -46,12 +46,13 @@
     <button id="mkbtn">mkdir</button>
     <button id="fbtn">mkfile</button>
     <ul>
+        <p>Name     file size       Modification        date</p>
+        <form action="http://localhost:3000/cd">
+            <input type="submit" value="..">
+        </form>
         <li>%</li>
     </ul>
 
-    <h2>?</h2>
-    <p>$</p>
-    ${control}
 
 
     <div>
@@ -156,11 +157,22 @@
             const moveform = document.createElement('form');
             moveform.method = 'post';
             moveform.action = "http://localhost:3000/cd";
+
+            const hiddenmove = document.createElement('input');
+            hiddenmove.type = 'hidden';
+            hiddenmove.name = 'move_directory';
+            hiddenmove.value=link.value;
+            moveform.appendChild(hiddenmove);
+            document.body.appendChild(moveform);
+            moveform.submit();
+
+
         }
         function readfile(link){
             const form = document.createElement('form');
             form.method = 'post';
             form.action = "http://localhost:3000/readfile";
+
             const hiddenField= document.createElement('input');
             hiddenField.type='hidden';
             hiddenField.name='file_name';
@@ -173,18 +185,44 @@
             const deletedirform = document.createElement('form');
             deletedirform.method = 'post';
             deletedirform.action = "http://localhost:3000/rmdir";
+
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = "del_dirname";
+            hiddenField.value = link.value;
+
+            deletedirform.appendChild(hiddenField);
+            document.body.appendChild(deletedirform);
+            deletedirform.submit();
+
+
         }
 
         function deletefile(link){
             const deletefileform = document.createElement('form');
             deletefileform.method = 'post';
             deletefileform.action = "http://localhost:3000/rmFile";
+
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = "del_filename";
+            hiddenField.value = link.value;
+
+            deletefileform.appendChild(hiddenField);
+            document.body.appendChild(deletefileform);
+            deletefileform.submit();
+
         }
         function renamereq(link){
             <!--보류..-->
             const renamebutton = document.getElementsByName("renamein");
 
 
+        }
+        function editf(link){
+            const editfileform = document.createElement('form');
+            editfileform.method = 'post';
+            editfileform.action = "http://localhost:3000/editfile";
         }
     </script>
 </body>
