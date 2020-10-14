@@ -8,6 +8,7 @@ var cur_path = path.resolve('../fs');
 var file_name="";
 var file_content="";
 var dir_name="";
+let state=0;
 
 var app= http.createServer(function(request,response){
     var _url = request.url;
@@ -18,40 +19,39 @@ var app= http.createServer(function(request,response){
     {
 
         fs.readFile("../frontend/template.html",function(err,tmp1){
-
-
-
-
             fs.readdir(cur_path,function(err,data){
-
-
                 lsinfo="";
-                data.forEach(function(element){
 
-                    fs.stat(cur_path,function(err,stat){
-                        if(err){
-                            console.error(err);
-                        }
-                        else{
-                            if(stat.isDirectory()==true) {
-                                lsinfo+="<li onclick='readfile(this);'>"+element+"<button onclick='deletedir()'>delete</button><button onclick='renamereq()'>rename</button></li>";
-                            }
-                            if(stat.isFile()==true) {
-                                lsinfo+="<li onclick='readfile(this);'>"+element+"<button onclick='deletefile()'>delete</button><button onclick='renamereq()'>rename</button></li>";
+                data.forEach(function(element) {
+                    lsinfo+="<li>"+element;
 
-                            }
-                            let html = tmp1.toString().replace('%',lsinfo);
-                            html = html.replace('?',file_name);
-                            html = html.replace('$',file_content);
-                            response.writeHead(200,{'Content-Type' : 'text/html'});
-                            response.end(html);
-                        }
-                    });
+                    var stat = fs.statSync(cur_path+"/"+element);
+
+                    if(stat.isDirectory()){
+                        lsinfo += "<button onclick='deletedir(this)'>deletedir</button><button onclick='renamereq()'>rename</button></li>";
+                        console.log(element+"hi dir");
+                        console.log(stat);
+
+
+                    }
+                    else if(stat.isFile()){
+                        lsinfo += "<button onclick='deletefile(this)'>deletefile</button><button onclick='renamereq()'>rename</button></li>";
+                        console.log(element+"hi file");
+                        console.log(stat);
+
+
+                    }
+
+
                 });
-
-
-
+                let html = tmp1.toString().replace('%', lsinfo);
+                html = html.replace('?', file_name);
+                html = html.replace('$', file_content);
+                response.writeHead(200, {'Content-Type': 'text/html'});
+                response.end(html);
             });
+
+
         });
 
     }
