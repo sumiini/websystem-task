@@ -47,10 +47,8 @@
     <button id="fbtn">mkfile</button>
     <ul>
         <p>Name     file size       Modification        date</p>
-        <form action="http://localhost:3000/cd">
-            <input type="submit" value="..">
-        </form>
-        <li>%</li>
+
+        <p>%</p>
     </ul>
 
 
@@ -160,12 +158,14 @@
 
             const hiddenmove = document.createElement('input');
             hiddenmove.type = 'hidden';
-            hiddenmove.name = 'move_directory';
-            hiddenmove.value=link.value;
+            hiddenmove.name = 'move_dir';
+            hiddenmove.value=link.textContent;
+
             moveform.appendChild(hiddenmove);
             document.body.appendChild(moveform);
             moveform.submit();
-            console.log(link);
+
+            console.log(link.value);
 
         }
         function readfile(link){
@@ -176,7 +176,7 @@
             const hiddenField= document.createElement('input');
             hiddenField.type='hidden';
             hiddenField.name='file_name';
-            hiddenField.value = link.textContent;
+            hiddenField.value = link.value;
             form.appendChild(hiddenField);
             document.body.appendChild(form);
             form.submit();
@@ -214,8 +214,24 @@
         }
         function renamereq(link){
             <!--보류..-->
-            const renamebutton = document.getElementsByName("renamein");
+            const renamereqform = document.createElement('form');
+            renamereqform.method = 'post';
+            renamereqform.action = "http://localhost:3000/rename";
 
+            const hiddenrename = document.createElement('input');
+            hiddenrename.type = 'hidden';
+            hiddenrename.name = "old_name";
+            hiddenrename.value = link.value
+
+            const newrename = document.createElement('input');
+            newrename.type='text';
+            newrename.name='new_name';
+            newrename.value=link.value;
+
+            renamereqform.appendChild(hiddenrename);
+            renamereqform.appendChild(newrename);
+            document.body.appendChild(renamereqform);
+            renamereqform.submit();
 
         }
         function editf(link){

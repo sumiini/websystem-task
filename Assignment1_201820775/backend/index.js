@@ -29,17 +29,16 @@ var app= http.createServer(function(request,response){
                     var size = stat.size.toString();
 
                     if(stat.isDirectory()){
-                        lsinfo += "<li onclick='movedir(this,";
-                        lsinfo+= element+");' value="+element+">"+element+"<button onclick='deletedir(this);'value="+element+">";
-                        lsinfo+="deletedir"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</li>";
+                        lsinfo += "<table><td onclick='movedir(this);'value="+element+">"+element+"</td><td><button onclick='deletedir(this);'value="+element+">";
+                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</td></table>";
 
 
 
                     }
                     else if(stat.isFile()){
-                        lsinfo += "<li onclick='editf(this);'value="+element+">"+element+"<button onclick='deletefile(this);' value="+element+">";
+                        lsinfo += "<table><td onclick='editf(this);'value="+element+">"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
 
-                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</li>";
+                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</td></table>";
 
 
                     }
@@ -68,13 +67,13 @@ var app= http.createServer(function(request,response){
 
         request.on('end',function(){
             var post = qs.parse(body);
-            var move_directory =post.move_directory;
+            var move_dir =post.move_dir;
 
-
-
-
-            cur_path = path.join(cur_path,move_directory);
-
+            cur_path = path.resolve(cur_path,move_dir);
+            fs.readFile(cur_path,'utf8',function(err,data){
+                response.writeHead(302,{Location:`/`});
+                response.end('success');
+            });
 
 
         });
@@ -139,7 +138,6 @@ var app= http.createServer(function(request,response){
 
                 response.writeHead(302,{Location:"http://localhost:3000/"});
                 response.end('success');
-                console.log(post);
 
 
 
@@ -173,6 +171,24 @@ var app= http.createServer(function(request,response){
     }
 
     else if(pathname==='/rename'){
+
+        var body='';
+        request.on('data',function(data){
+            body=body+data;
+        });
+
+        request.on('end',function(){
+
+            var post = qs.parse(body);
+            var old_name = post.old_name;
+            var new_name = post.new_name;
+            console.log(post);
+            fs.rename(old_name,new_name,function(err){
+                response.writeHead(302,{Location:`/`});
+                response.end('success');
+
+            });
+        });
 
     }
 

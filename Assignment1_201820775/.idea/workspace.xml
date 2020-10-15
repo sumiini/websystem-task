@@ -23,6 +23,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/hello" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/makefile1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/mkttt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/zzzzzzzzzzzzzzzzzzzzzzzzzzz.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +76,8 @@
       <workItem from="1602487740693" duration="3866000" />
       <workItem from="1602504347344" duration="19062000" />
       <workItem from="1602556195432" duration="23355000" />
-      <workItem from="1602641697978" duration="41329000" />
+      <workItem from="1602641697978" duration="44478000" />
+      <workItem from="1602730000168" duration="9977000" />
     </task>
     <servers />
   </component>
