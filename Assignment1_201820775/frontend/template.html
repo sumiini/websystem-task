@@ -48,13 +48,15 @@
 
         <p>%</p>
     </ul>
+
+
+
+
     <form action="http://localhost:3000/editfile" method="POST">
-        <textarea>?</textarea>
-        <textarea>$</textarea>
-        <input type="submit" value="파일편집">
+        <textarea name="editname">?</textarea>
+        <textarea name="editcontent">$</textarea>
+        <button type="submit" >파일편집</button>
     </form>
-
-
 
 
 
@@ -84,20 +86,7 @@
             
         </div>
 
-        <div id="ediMyModal" class="edimodal">
-            <div class="edimodal-content">
-                <span class="ediclose">&times;</span>
-                <p>Modify File</p>
-                <form action="http://localhost:3000/editfile" method="POST">
-                    <input type="text" name="filename">
-                    <textarea type="text" name="filecontent"></textarea>
-                    <input type="submit" value="modify file">
-                </form>
 
-            </div>
-
-
-        </div>
 
 
         <div id="reMyModal" class="remodal">
@@ -122,7 +111,7 @@
         var dirmodal = document.getElementById("dirMyModal");
         var filmodal = document.getElementById("fMyModal");
         var remodal = document.getElementById("reMyModal");
-        var desc = document.getElementById('des');
+        var edimodal = document.getElementById("ediMyModal");
 
         var renameform = document.getElementById("reform");
         var renameold = document.getElementById("reinputold");
@@ -156,6 +145,7 @@
             dirmodal.style.display = "none";
         }
 
+
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == dirmodal) {
@@ -164,6 +154,7 @@
             if(event.target==filmodal) {
                 filmodal.style.display = "none";
             }
+
         }
 
         function movedir(link){

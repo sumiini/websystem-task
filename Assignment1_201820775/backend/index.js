@@ -68,14 +68,20 @@ var app= http.createServer(function(request,response){
 
         request.on('end',function(){
             var post = qs.parse(body);
-            var title = post.title;
-            var description = post.description;
+            var editname = post.editname;
+            var editcontent = post.editcontent;
+
+            var editpath = path.join(cur_path,editname);
 
             fs.readFile(cur_path,'utf8',function(err){
-                response.writeHead(302,{Location:`/`});
-                response.end('success');
-                console.log(post);
+                fs.writeFile(editpath,editcontent,'utf8',function (){
+                    response.writeHead(302,{Location:`/`});
+                    response.end('success');
+                    console.log(post);
+                })
+
             });
+
 
 
         });
