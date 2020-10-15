@@ -20,6 +20,7 @@ var app= http.createServer(function(request,response){
         fs.readFile("../frontend/template.html",function(err,tmp1){
             fs.readdir(cur_path,function(err,data){
                 lsinfo="";
+                lsinfo+="<td><p onclick='movedir(this);' value="+".."+">"+".."+"</p></td>"
 
                 data.forEach(function(element) {
 
