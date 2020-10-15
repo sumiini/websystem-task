@@ -34,13 +34,13 @@ var app= http.createServer(function(request,response){
 
                     if(stat.isDirectory()){
                         lsinfo += "<tr bgcolor='gray'><td width='50%' onclick='movedir(this);'value="+element+">"+element+"</td><td><button onclick='deletedir(this);'value="+element+">";
-                        lsinfo+="deletefile"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px' >"+size+"B"+"</td><td>"+time+"</td></tr>";
+                        lsinfo+="delete"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px' >"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
                     else if(stat.isFile()){
                         lsinfo += "<tr bgcolor='#ffc0cb'><td  width='50%' onclick='readfile(this);'value="+element+" description=>"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
 
-                        lsinfo+="deletefile"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
+                        lsinfo+="delete"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
 
