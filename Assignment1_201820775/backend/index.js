@@ -5,6 +5,8 @@ var path = require('path');
 var qs = require('querystring');
 var cur_path = path.resolve('../fs');
 
+var de;
+
 var file_name="";
 var file_content="";
 let state=0;
@@ -27,7 +29,7 @@ var app= http.createServer(function(request,response){
 
 
                     var stat = fs.statSync(cur_path+"/"+element);
-                    var time = stat.ctime.getFullYear() + "/"+stat.ctime.getMonth() + "/"+stat.ctime.getDate();
+                    var time = stat.ctime.getFullYear() + "-"+stat.ctime.getMonth() + "-"+stat.ctime.getDate();
                     var size = stat.size.toString();
 
                     if(stat.isDirectory()){
@@ -36,7 +38,7 @@ var app= http.createServer(function(request,response){
 
                     }
                     else if(stat.isFile()){
-                        lsinfo += "<tr bgcolor='#ffc0cb'><td width='50%' onclick='editf(this);'value="+element+">"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
+                        lsinfo += "<tr bgcolor='#ffc0cb'><td  width='50%' onclick='readfile(this);'value="+element+" description=>"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
 
                         lsinfo+="deletefile"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
 
@@ -46,6 +48,8 @@ var app= http.createServer(function(request,response){
                 });
                 lsinfo+="</table>";
                 let html = tmp1.toString().replace('%', lsinfo);
+                html=html.replace('?',file_name);
+                html=html.replace('$',file_content);
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 response.end(html);
             });
@@ -56,6 +60,25 @@ var app= http.createServer(function(request,response){
     }
 
     else if(pathname==='/editfile'){
+
+        var body = '';
+        request.on('data',function(data){
+            body = body + data;
+        });
+
+        request.on('end',function(){
+            var post = qs.parse(body);
+            var title = post.title;
+            var description = post.description;
+
+            fs.readFile(cur_path,'utf8',function(err){
+                response.writeHead(302,{Location:`/`});
+                response.end('success');
+                console.log(post);
+            });
+
+
+        });
 
     }
 
@@ -88,14 +111,16 @@ var app= http.createServer(function(request,response){
         request.on('end',function(){
             var post = qs.parse(body);
             file_name = post.file_name;
-            console.log(file_name);
+            var description = file_content;
+
             var file_path = path.join(cur_path,file_name);
 
             fs.readFile(file_path,'utf8',function(err,data){
-                console.log(file_path);
                 file_content=data;
                 response.writeHead(302,{Location:`/`});
                 response.end('success');
+                console.log(file_name);
+
             });
 
 
@@ -158,7 +183,6 @@ var app= http.createServer(function(request,response){
             fs.unlink(rmfilepath,function (err){
                 response.writeHead(302,{Location:`/`});
                 response.end('success');
-                console.log(post);
 
             });
 
@@ -178,10 +202,15 @@ var app= http.createServer(function(request,response){
             var post = qs.parse(body);
             var old_name = post.old_name;
             var new_name = post.new_name;
+
+            var pp = path.join(cur_path,new_name);
             fs.rename(old_name,new_name,function(err){
-                response.writeHead(302,{Location:`/`});
-                response.end('success');
-                console.log(post);
+                fs.writeFile(pp,'ggg','utf8',function (err){
+                    response.writeHead(302,{Location:`/`});
+                    response.end('success');
+                    console.log(old_name);
+                });
+
 
             });
         });
@@ -198,12 +227,17 @@ var app= http.createServer(function(request,response){
             var title = post.finame;
             var description = post.description;
             var file_path = path.join(cur_path,title);
+            de= description;
+
             fs.writeFile(file_path,description,function(err,data){
                 response.writeHead(302,{Location:`/`});
                 response.end('success');
+                de= description;
+
             });
         });
     }
+
 
 });
 

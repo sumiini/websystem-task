@@ -41,7 +41,6 @@
     </style>
 </head>
 <body>
-    <h1><a href="/">Node.js</a></h1>
 
     <button id="mkbtn">mkdir</button>
     <button id="fbtn">mkfile</button>
@@ -49,6 +48,13 @@
 
         <p>%</p>
     </ul>
+    <form action="http://localhost:3000/editfile" method="POST">
+        <textarea>?</textarea>
+        <textarea>$</textarea>
+        <input type="submit" value="파일편집">
+    </form>
+
+
 
 
 
@@ -71,7 +77,7 @@
                 <p>Create File</p>
                 <form action="http://localhost:3000/writefile" method="POST">
                     <input type="text" name="finame">
-                    <textarea name="description" type="text"></textarea>
+                    <textarea id="des" name="description" type="text"></textarea>
                     <input type="submit" value="create file">
                 </form>
             </div>
@@ -98,9 +104,10 @@
             <div class="remodal-content">
                 <span class="reclose">&times;</span>
                 <p>Rename</p>
-                <form action="http://localhost:3000/rename" method="POST">
-                    <input type="hidden" name="oldname">
-                    <input type="submit" value="rename" name="renamein">
+                <form id="reform">
+                    <input id="reinputold">
+                    <input id="reinputnew">
+                    <input id="renamesub">
                 </form>
             </div>
 
@@ -114,6 +121,14 @@
 
         var dirmodal = document.getElementById("dirMyModal");
         var filmodal = document.getElementById("fMyModal");
+        var remodal = document.getElementById("reMyModal");
+        var desc = document.getElementById('des');
+
+        var renameform = document.getElementById("reform");
+        var renameold = document.getElementById("reinputold");
+        var renamenew = document.getElementById("reinputnew");
+        var renamesubmit = document.getElementById("renamesub");
+
         // Get the button that opens the modal
         var mkbtn = document.getElementById("mkbtn");
         var fbtn = document.getElementById("fbtn");
@@ -121,6 +136,7 @@
         // Get the <span> element that closes the modal
         var dirspan = document.getElementsByClassName("mkdirclose")[0];
         var fspan = document.getElementsByClassName("mkfclose")[0];
+        var respan = document.getElementsByClassName("reclose")[0];
 
         // When the user clicks the button, open the modal
         mkbtn.onclick = function() {
@@ -145,8 +161,8 @@
             if (event.target == dirmodal) {
                 dirmodal.style.display = "none";
             }
-            if(event.target==filmodal){
-                filmodal.style.display="none";
+            if(event.target==filmodal) {
+                filmodal.style.display = "none";
             }
         }
 
@@ -175,10 +191,14 @@
             const hiddenField= document.createElement('input');
             hiddenField.type='hidden';
             hiddenField.name='file_name';
-            hiddenField.value = link.value;
+            hiddenField.value = link.textContent;
+
+
             form.appendChild(hiddenField);
             document.body.appendChild(form);
             form.submit();
+            console.log(desc.value);
+
         }
         function deletedir(link){
             const deletedirform = document.createElement('form');
@@ -213,22 +233,40 @@
         }
         function renamereq(link){
             <!--보류..-->
-            const renamereqform = document.createElement('form');
+            const renamereqform = renameform;
+
             renamereqform.method = 'post';
             renamereqform.action = "http://localhost:3000/rename";
 
-            const hiddenrename = document.createElement('input');
+
+            const hiddenrename = renameold;
             hiddenrename.type = 'hidden';
             hiddenrename.name = "old_name";
             hiddenrename.value = link.value
 
-            const newrename = document.createElement('input');
+            const newrename = renamenew;
             newrename.type='text';
             newrename.name='new_name';
+            newrename.value = link.text;
 
-            const newrename2 = document.createElement('input');
+            const newrename2 = renamesubmit;
             newrename2.type="submit";
-            newrename2.value="rename request"
+            newrename2.value="renamerequest"
+
+            respan.onclick = function (){
+                remodal.style.display= "none";
+            }
+
+            window.onclick = function(event) {
+
+                if(event.target==remodal){
+                    remodal.style.display="none";
+                }
+            }
+            newrename2.onclick = function(){
+                filmodal.style.display="block";
+            }
+
 
             renamereqform.appendChild(hiddenrename);
             renamereqform.appendChild(newrename);
@@ -236,11 +274,27 @@
             document.body.appendChild(renamereqform);
             renamereqform.submit();
 
+
         }
         function editf(link){
             const editfileform = document.createElement('form');
             editfileform.method = 'post';
             editfileform.action = "http://localhost:3000/editfile";
+
+
+            const eittitle = document.createElement('input');
+            eittitle.type = 'hidden';
+            eittitle.name = "title";
+            eittitle.value = link.textContent;
+            console.log(link.value);
+
+            const editdescription = document.createElement('input');
+            editdescription.name="description";
+
+            editfileform.appendChild(eittitle);
+            editfileform.appendChild(editdescription);
+            document.body.appendChild(editfileform);
+            editfileform.submit();
         }
     </script>
 </body>
