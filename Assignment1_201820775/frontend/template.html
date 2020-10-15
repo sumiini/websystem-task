@@ -46,7 +46,6 @@
     <button id="mkbtn">mkdir</button>
     <button id="fbtn">mkfile</button>
     <ul>
-        <p>Name     file size       Modification        date</p>
 
         <p>%</p>
     </ul>
@@ -226,10 +225,14 @@
             const newrename = document.createElement('input');
             newrename.type='text';
             newrename.name='new_name';
-            newrename.value=link.value;
+
+            const newrename2 = document.createElement('input');
+            newrename2.type="submit";
+            newrename2.value="rename request"
 
             renamereqform.appendChild(hiddenrename);
             renamereqform.appendChild(newrename);
+            renamereqform.appendChild(newrename2);
             document.body.appendChild(renamereqform);
             renamereqform.submit();
 

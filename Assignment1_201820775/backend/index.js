@@ -20,7 +20,8 @@ var app= http.createServer(function(request,response){
         fs.readFile("../frontend/template.html",function(err,tmp1){
             fs.readdir(cur_path,function(err,data){
                 lsinfo="";
-                lsinfo+="<td><p onclick='movedir(this);' value="+".."+">"+".."+"</p></td>"
+                lsinfo+="<table border='1' ><th colspan='3' width='50%' >Name</th><th width='80px' style='padding-right: 40px' >file size</th><th>Modificationdate</th>";
+                lsinfo+="<tr bgcolor='gray'><td colspan='5'><p onclick='movedir(this);' value="+".."+">"+".."+"</p></td></tr>"
 
                 data.forEach(function(element) {
 
@@ -30,22 +31,20 @@ var app= http.createServer(function(request,response){
                     var size = stat.size.toString();
 
                     if(stat.isDirectory()){
-                        lsinfo += "<table><td onclick='movedir(this);'value="+element+">"+element+"</td><td><button onclick='deletedir(this);'value="+element+">";
-                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</td></table>";
-
-
+                        lsinfo += "<tr bgcolor='gray'><td width='50%' onclick='movedir(this);'value="+element+">"+element+"</td><td><button onclick='deletedir(this);'value="+element+">";
+                        lsinfo+="deletefile"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px' >"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
                     else if(stat.isFile()){
-                        lsinfo += "<table><td onclick='editf(this);'value="+element+">"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
+                        lsinfo += "<tr bgcolor='#ffc0cb'><td width='50%' onclick='editf(this);'value="+element+">"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
 
-                        lsinfo+="deletefile"+"</button><button onclick='renamereq(this);'value="+element+">"+'rename'+"</button>"+'__'+size+'__'+time+"</td></table>";
-
+                        lsinfo+="deletefile"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
 
 
                 });
+                lsinfo+="</table>";
                 let html = tmp1.toString().replace('%', lsinfo);
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 response.end(html);
@@ -123,7 +122,6 @@ var app= http.createServer(function(request,response){
     }
 
 
-
     else if(pathname==='/rmdir'){
         var body='';
         request.on('data',function(data){
@@ -139,8 +137,6 @@ var app= http.createServer(function(request,response){
 
                 response.writeHead(302,{Location:"http://localhost:3000/"});
                 response.end('success');
-
-
 
             });
 
@@ -168,7 +164,6 @@ var app= http.createServer(function(request,response){
 
         });
 
-
     }
 
     else if(pathname==='/rename'){
@@ -183,10 +178,10 @@ var app= http.createServer(function(request,response){
             var post = qs.parse(body);
             var old_name = post.old_name;
             var new_name = post.new_name;
-            console.log(post);
             fs.rename(old_name,new_name,function(err){
                 response.writeHead(302,{Location:`/`});
                 response.end('success');
+                console.log(post);
 
             });
         });
