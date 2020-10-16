@@ -58,10 +58,11 @@
         <button type="submit" >파일편집</button>
     </form>
 
-    <div>Rename</div>
     <form action="http://localhost:3000/rename" method="POST">
+        <div>Rename</div>
+        <input type="hidden" name="old_name" id="oid">
+        <input type="text" name="new_name" id="nid">
 
-        <textarea type="text" name="new_name" >@</textarea>
         <input type="submit" value="rename">
     </form>
 
@@ -253,12 +254,13 @@
             hiddenrename.type = 'hidden';
             hiddenrename.name = "old_name";
             hiddenrename.value = link.value;
-            console.log(link.value);
+
+            document.getElementById('oid').value=link.value;
+            document.getElementById('nid').placeholder=link.value;
 
 
-
-
-
+            console.log(document.getElementById('oid').value);
+A
             renamereqform.appendChild(hiddenrename);
             document.body.appendChild(renamereqform);
 
