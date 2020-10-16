@@ -50,7 +50,7 @@
 </ul>
 
 
-
+<!--  파일 수정  -->
 <div class="editfileclass">
     <form action="http://localhost:3000/editfile" method="POST">
         <div>Modify file content</div>
@@ -61,7 +61,7 @@
 </div>
 
 
-
+<!--  파일 및 폴더 이름 수정  -->
 <div class="renameclass">
     <form action="http://localhost:3000/rename" method="POST">
         <div>Rename</div>
@@ -77,6 +77,7 @@
 
 
 <div>
+    <!--  폴더 생성  -->
     <div id="dirMyModal" class="dirmodal">
         <div class="dirmodal-content">
             <span class="mkdirclose">&times;</span>
@@ -89,6 +90,7 @@
 
     </div>
 
+    <!--  파일 생성  -->
     <div id="fMyModal" class="fmodal">
         <div class="fmodal-content">
             <span class="mkfclose">&times;</span>
@@ -102,23 +104,6 @@
 
     </div>
 
-    <div id="reMyModal" class="remodal">
-        <div class="remodal-content">
-            <span class="reclose">&times;</span>
-            <p>Create File</p>
-            <form name="renameform" action="http://localhost:3000/rename" method="POST">
-                <input type="hidden" name="old_name">
-                <textarea name="new_name"></textarea>
-                <button type="submit" id="rebtn">Rename</button>
-            </form>
-        </div>
-
-    </div>
-
-
-
-
-
 
 
 </div>
@@ -128,17 +113,14 @@
 
     var dirmodal = document.getElementById("dirMyModal");
     var filmodal = document.getElementById("fMyModal");
-    var remodal = document.getElementById("reMyModal");
 
     // Get the button that opens the modal
     var mkbtn = document.getElementById("mkbtn");
     var fbtn = document.getElementById("fbtn");
-    var rbtn = document.getElementById("rebtn");
 
     // Get the <span> element that closes the modal
     var dirspan = document.getElementsByClassName("mkdirclose")[0];
     var fspan = document.getElementsByClassName("mkfclose")[0];
-    var rspan = document.getElementsByClassName("reclose")[0];
 
     // When the user clicks the button, open the modal
     mkbtn.onclick = function() {
@@ -149,9 +131,6 @@
         filmodal.style.display="block";
     }
 
-    rbtn.onclick = function(){
-        filmodal.style.display="block";
-    }
 
 
     fspan.onclick = function(){
@@ -163,10 +142,6 @@
         dirmodal.style.display = "none";
     }
 
-    rspan.onclick = function() {
-        dirmodal.style.display = "none";
-    }
-
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
@@ -175,9 +150,6 @@
         }
         if(event.target==filmodal) {
             filmodal.style.display = "none";
-        }
-        if(event.target==remodal) {
-            remodal.style.display = "none";
         }
 
     }
