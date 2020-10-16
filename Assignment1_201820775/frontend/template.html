@@ -58,6 +58,13 @@
         <button type="submit" >파일편집</button>
     </form>
 
+    <div>Rename</div>
+    <form action="http://localhost:3000/rename" method="POST">
+
+        <textarea type="text" name="new_name" >@</textarea>
+        <input type="submit" value="rename">
+    </form>
+
 
 
 
@@ -88,21 +95,23 @@
             
         </div>
 
-
-
-
         <div id="reMyModal" class="remodal">
             <div class="remodal-content">
                 <span class="reclose">&times;</span>
-                <p>Rename</p>
-                <form id="reform">
-                    <input id="reinputold">
-                    <input id="reinputnew">
-                    <input id="renamesub">
+                <p>Create File</p>
+                <form name="renameform" action="http://localhost:3000/rename" method="POST">
+                    <input type="hidden" name="old_name">
+                    <textarea name="new_name"></textarea>
+                    <button type="submit" id="rebtn">Rename</button>
                 </form>
             </div>
 
         </div>
+
+
+
+
+
 
 
     </div>
@@ -113,21 +122,16 @@
         var dirmodal = document.getElementById("dirMyModal");
         var filmodal = document.getElementById("fMyModal");
         var remodal = document.getElementById("reMyModal");
-        var edimodal = document.getElementById("ediMyModal");
-
-        var renameform = document.getElementById("reform");
-        var renameold = document.getElementById("reinputold");
-        var renamenew = document.getElementById("reinputnew");
-        var renamesubmit = document.getElementById("renamesub");
 
         // Get the button that opens the modal
         var mkbtn = document.getElementById("mkbtn");
         var fbtn = document.getElementById("fbtn");
+        var rbtn = document.getElementById("rebtn");
 
         // Get the <span> element that closes the modal
         var dirspan = document.getElementsByClassName("mkdirclose")[0];
         var fspan = document.getElementsByClassName("mkfclose")[0];
-        var respan = document.getElementsByClassName("reclose")[0];
+        var rspan = document.getElementsByClassName("reclose")[0];
 
         // When the user clicks the button, open the modal
         mkbtn.onclick = function() {
@@ -138,12 +142,21 @@
             filmodal.style.display="block";
         }
 
+        rbtn.onclick = function(){
+            filmodal.style.display="block";
+        }
+
+
         fspan.onclick = function(){
             filmodal.style.display="none";
         }
 
         // When the user clicks on <span> (x), close the modal
         dirspan.onclick = function() {
+            dirmodal.style.display = "none";
+        }
+
+        rspan.onclick = function() {
             dirmodal.style.display = "none";
         }
 
@@ -155,6 +168,9 @@
             }
             if(event.target==filmodal) {
                 filmodal.style.display = "none";
+            }
+            if(event.target==remodal) {
+                remodal.style.display = "none";
             }
 
         }
@@ -226,6 +242,7 @@
         }
         function renamereq(link){
             <!--보류..-->
+
             const renamereqform = document.createElement('form');
 
             renamereqform.method = 'post';
@@ -235,26 +252,19 @@
             const hiddenrename = document.createElement('input');
             hiddenrename.type = 'hidden';
             hiddenrename.name = "old_name";
-            hiddenrename.value = link.value
+            hiddenrename.value = link.value;
             console.log(link.value);
 
-            const newtxt = document.createElement('textarea');
-            newtxt.name="renamearea";
-
-            const renabtn = document.createElement('button');
-            renabtn.type="submit";
-            renabtn.textContent="Rename";
 
 
 
 
             renamereqform.appendChild(hiddenrename);
-            renamereqform.appendChild(newtxt);
-            renamereqform.appendChild(renabtn);
-
-
             document.body.appendChild(renamereqform);
+
+
             renamereqform.submit();
+
 
 
         }

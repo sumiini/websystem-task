@@ -10,6 +10,7 @@ var de;
 var file_name="";
 var file_content="";
 let state=0;
+var old_name="";
 
 var app= http.createServer(function(request,response){
     var _url = request.url;
@@ -34,13 +35,15 @@ var app= http.createServer(function(request,response){
 
                     if(stat.isDirectory()){
                         lsinfo += "<tr bgcolor='gray'><td width='50%' onclick='movedir(this);'value="+element+">"+element+"</td><td><button onclick='deletedir(this);'value="+element+">";
-                        lsinfo+="delete"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px' >"+size+"B"+"</td><td>"+time+"</td></tr>";
+                        lsinfo+="delete"+"</button></td>";
+                        lsinfo+="<td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px' >"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
                     else if(stat.isFile()){
                         lsinfo += "<tr bgcolor='#ffc0cb'><td  width='50%' onclick='readfile(this);'value="+element+" description=>"+element+"</td><td><button onclick='deletefile(this);' value="+element+">";
 
-                        lsinfo+="delete"+"</button></td><td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
+                        lsinfo+="delete"+"</button></td>";
+                        lsinfo+="<td><button style='margin-right: 50px' onclick='renamereq(this);'value="+element+">"+'rename'+"</button></td><td width='70px'>"+size+"B"+"</td><td>"+time+"</td></tr>";
 
                     }
 
@@ -50,7 +53,7 @@ var app= http.createServer(function(request,response){
                 let html = tmp1.toString().replace('%', lsinfo);
                 html=html.replace('?',file_name);
                 html=html.replace('$',file_content);
-                html = html.replace('@',file_name);
+                html = html.replace('@',old_name);
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 response.end(html);
             });
@@ -207,11 +210,11 @@ var app= http.createServer(function(request,response){
         request.on('end',function(){
 
             var post = qs.parse(body);
-            var old_name = post.old_name;
-            var renamearea = post.renamearea;
+            old_name = post.old_name;
+            var new_name = post.new_name;
 
 
-            fs.rename(cur_path+"/"+old_name,cur_path+"/"+renamearea,function(err){
+            fs.rename(cur_path+"/"+old_name,cur_path+"/"+new_name,function(err){
                     response.writeHead(302,{Location:`/`});
                     response.end('success');
                     console.log(post);

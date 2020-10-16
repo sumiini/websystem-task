@@ -23,12 +23,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/hihi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/name.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/soso.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/sumininini.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/undefined" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/zzzzzzzzzzz.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/201015_newfile1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/Kafka.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/Lorem.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/ddd.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/dff.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/gggg.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/i'msumin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fs/zzzzzzzzzzzzzzzzzzzzzzzzzzz.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
       <workItem from="1602730000168" duration="38174000" />
       <workItem from="1602787058982" duration="4202000" />
       <workItem from="1602791298949" duration="613000" />
-      <workItem from="1602815981541" duration="5072000" />
+      <workItem from="1602815981541" duration="11767000" />
     </task>
     <servers />
   </component>
