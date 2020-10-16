@@ -23,10 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/ggg.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/ㅅㅂ" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/제발성공좀.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs/짜증나.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <workItem from="1602730000168" duration="38174000" />
       <workItem from="1602787058982" duration="4202000" />
       <workItem from="1602791298949" duration="613000" />
-      <workItem from="1602815981541" duration="27488000" />
+      <workItem from="1602815981541" duration="27929000" />
     </task>
     <servers />
   </component>

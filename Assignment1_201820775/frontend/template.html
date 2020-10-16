@@ -51,21 +51,27 @@
 
 
 
-<div>Modify file content</div>
-<form action="http://localhost:3000/editfile" method="POST">
-    <textarea name="editname">?</textarea>
-    <textarea name="editcontent">$</textarea>
-    <button type="submit" >파일편집</button>
-</form>
+<div class="editfileclass">
+    <form action="http://localhost:3000/editfile" method="POST">
+        <div>Modify file content</div>
+        <textarea placeholder="file tilte" name="editname">?</textarea>
+        <textarea placeholder="file content" name="editcontent">$</textarea>
+        <button type="submit" >파일편집</button>
+    </form>
+</div>
 
-<form action="http://localhost:3000/rename" method="POST">
-    <div>Rename</div>
-    <textarea type="hidden" name="old_name" id="oid">@</textarea>
-    <textarea  type="text" name="new_name" id="nid"></textarea>
 
-    <input type="submit" value="rename">
-</form>
 
+<div class="renameclass">
+    <form action="http://localhost:3000/rename" method="POST">
+        <div>Rename</div>
+        <textarea placeholder="previous title" type="hidden" name="old_name" id="oid">@</textarea>
+        <textarea placeholder="modification"  type="text" name="new_name" id="nid"></textarea>
+
+        <input type="submit" value="rename">
+    </form>
+
+</div>
 
 
 
@@ -76,7 +82,7 @@
             <span class="mkdirclose">&times;</span>
             <p>Create Directory</p>
             <form action="http://localhost:3000/mkdir" method="POST">
-                <input type="text" name="dirname">
+                <input placeholder="directory title" type="text" name="dirname">
                 <input type="submit" value="create directory">
             </form>
         </div>
@@ -88,8 +94,8 @@
             <span class="mkfclose">&times;</span>
             <p>Create File</p>
             <form action="http://localhost:3000/writefile" method="POST">
-                <input type="text" name="finame">
-                <textarea id="des" name="description" type="text"></textarea>
+                <input placeholder="file title" type="text" name="finame">
+                <textarea placeholder="file content" id="des" name="description" type="text"></textarea>
                 <input type="submit" value="create file">
             </form>
         </div>

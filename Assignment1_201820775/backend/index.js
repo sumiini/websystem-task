@@ -172,7 +172,6 @@ var app= http.createServer(function(request,response){
 
                 response.writeHead(302,{Location:"http://localhost:3000/"});
                 response.end('success');
-                console.log(dpath);
 
             });
 
