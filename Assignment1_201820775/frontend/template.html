@@ -42,253 +42,253 @@
 </head>
 <body>
 
-    <button id="mkbtn">mkdir</button>
-    <button id="fbtn">mkfile</button>
-    <ul>
+<button id="mkbtn">mkdir</button>
+<button id="fbtn">mkfile</button>
+<ul>
 
-        <p>%</p>
-    </ul>
-
-
-
-    <div>Modify file content</div>
-    <form action="http://localhost:3000/editfile" method="POST">
-        <textarea name="editname">?</textarea>
-        <textarea name="editcontent">$</textarea>
-        <button type="submit" >파일편집</button>
-    </form>
-
-    <form action="http://localhost:3000/rename" method="POST">
-        <div>Rename</div>
-        <input type="hidden" name="old_name" id="oid">
-        <input type="text" name="new_name" id="nid">
-
-        <input type="submit" value="rename">
-    </form>
+    <p>%</p>
+</ul>
 
 
 
+<div>Modify file content</div>
+<form action="http://localhost:3000/editfile" method="POST">
+    <textarea name="editname">?</textarea>
+    <textarea name="editcontent">$</textarea>
+    <button type="submit" >파일편집</button>
+</form>
+
+<form action="http://localhost:3000/rename" method="POST">
+    <div>Rename</div>
+    <textarea type="hidden" name="old_name" id="oid">@</textarea>
+    <textarea  type="text" name="new_name" id="nid"></textarea>
+
+    <input type="submit" value="rename">
+</form>
 
 
-    <div>
-        <div id="dirMyModal" class="dirmodal">
-            <div class="dirmodal-content">
-                <span class="mkdirclose">&times;</span>
-                <p>Create Directory</p>
-                <form action="http://localhost:3000/mkdir" method="POST">
-                    <input type="text" name="dirname">
-                    <input type="submit" value="create directory">
-                </form>
-            </div>
 
-        </div>
-        
-        <div id="fMyModal" class="fmodal">
-            <div class="fmodal-content">
-                <span class="mkfclose">&times;</span>
-                <p>Create File</p>
-                <form action="http://localhost:3000/writefile" method="POST">
-                    <input type="text" name="finame">
-                    <textarea id="des" name="description" type="text"></textarea>
-                    <input type="submit" value="create file">
-                </form>
-            </div>
-            
+
+
+<div>
+    <div id="dirMyModal" class="dirmodal">
+        <div class="dirmodal-content">
+            <span class="mkdirclose">&times;</span>
+            <p>Create Directory</p>
+            <form action="http://localhost:3000/mkdir" method="POST">
+                <input type="text" name="dirname">
+                <input type="submit" value="create directory">
+            </form>
         </div>
 
-        <div id="reMyModal" class="remodal">
-            <div class="remodal-content">
-                <span class="reclose">&times;</span>
-                <p>Create File</p>
-                <form name="renameform" action="http://localhost:3000/rename" method="POST">
-                    <input type="hidden" name="old_name">
-                    <textarea name="new_name"></textarea>
-                    <button type="submit" id="rebtn">Rename</button>
-                </form>
-            </div>
+    </div>
 
+    <div id="fMyModal" class="fmodal">
+        <div class="fmodal-content">
+            <span class="mkfclose">&times;</span>
+            <p>Create File</p>
+            <form action="http://localhost:3000/writefile" method="POST">
+                <input type="text" name="finame">
+                <textarea id="des" name="description" type="text"></textarea>
+                <input type="submit" value="create file">
+            </form>
         </div>
 
+    </div>
 
-
-
-
-
+    <div id="reMyModal" class="remodal">
+        <div class="remodal-content">
+            <span class="reclose">&times;</span>
+            <p>Create File</p>
+            <form name="renameform" action="http://localhost:3000/rename" method="POST">
+                <input type="hidden" name="old_name">
+                <textarea name="new_name"></textarea>
+                <button type="submit" id="rebtn">Rename</button>
+            </form>
+        </div>
 
     </div>
 
 
-    <script type="text/javascript">
-
-        var dirmodal = document.getElementById("dirMyModal");
-        var filmodal = document.getElementById("fMyModal");
-        var remodal = document.getElementById("reMyModal");
-
-        // Get the button that opens the modal
-        var mkbtn = document.getElementById("mkbtn");
-        var fbtn = document.getElementById("fbtn");
-        var rbtn = document.getElementById("rebtn");
-
-        // Get the <span> element that closes the modal
-        var dirspan = document.getElementsByClassName("mkdirclose")[0];
-        var fspan = document.getElementsByClassName("mkfclose")[0];
-        var rspan = document.getElementsByClassName("reclose")[0];
-
-        // When the user clicks the button, open the modal
-        mkbtn.onclick = function() {
-            dirmodal.style.display = "block";
-        }
-
-        fbtn.onclick = function(){
-            filmodal.style.display="block";
-        }
-
-        rbtn.onclick = function(){
-            filmodal.style.display="block";
-        }
 
 
-        fspan.onclick = function(){
-            filmodal.style.display="none";
-        }
 
-        // When the user clicks on <span> (x), close the modal
-        dirspan.onclick = function() {
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    var dirmodal = document.getElementById("dirMyModal");
+    var filmodal = document.getElementById("fMyModal");
+    var remodal = document.getElementById("reMyModal");
+
+    // Get the button that opens the modal
+    var mkbtn = document.getElementById("mkbtn");
+    var fbtn = document.getElementById("fbtn");
+    var rbtn = document.getElementById("rebtn");
+
+    // Get the <span> element that closes the modal
+    var dirspan = document.getElementsByClassName("mkdirclose")[0];
+    var fspan = document.getElementsByClassName("mkfclose")[0];
+    var rspan = document.getElementsByClassName("reclose")[0];
+
+    // When the user clicks the button, open the modal
+    mkbtn.onclick = function() {
+        dirmodal.style.display = "block";
+    }
+
+    fbtn.onclick = function(){
+        filmodal.style.display="block";
+    }
+
+    rbtn.onclick = function(){
+        filmodal.style.display="block";
+    }
+
+
+    fspan.onclick = function(){
+        filmodal.style.display="none";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    dirspan.onclick = function() {
+        dirmodal.style.display = "none";
+    }
+
+    rspan.onclick = function() {
+        dirmodal.style.display = "none";
+    }
+
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == dirmodal) {
             dirmodal.style.display = "none";
         }
-
-        rspan.onclick = function() {
-            dirmodal.style.display = "none";
+        if(event.target==filmodal) {
+            filmodal.style.display = "none";
+        }
+        if(event.target==remodal) {
+            remodal.style.display = "none";
         }
 
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == dirmodal) {
-                dirmodal.style.display = "none";
-            }
-            if(event.target==filmodal) {
-                filmodal.style.display = "none";
-            }
-            if(event.target==remodal) {
-                remodal.style.display = "none";
-            }
+    function movedir(link){
+        const moveform = document.createElement('form');
+        moveform.method = 'post';
+        moveform.action = "http://localhost:3000/cd";
 
-        }
+        const hiddenmove = document.createElement('input');
+        hiddenmove.type = 'hidden';
+        hiddenmove.name = 'move_dir';
+        hiddenmove.value=link.textContent;
 
-        function movedir(link){
-            const moveform = document.createElement('form');
-            moveform.method = 'post';
-            moveform.action = "http://localhost:3000/cd";
+        moveform.appendChild(hiddenmove);
+        document.body.appendChild(moveform);
+        moveform.submit();
 
-            const hiddenmove = document.createElement('input');
-            hiddenmove.type = 'hidden';
-            hiddenmove.name = 'move_dir';
-            hiddenmove.value=link.textContent;
+        console.log(link.value);
 
-            moveform.appendChild(hiddenmove);
-            document.body.appendChild(moveform);
-            moveform.submit();
+    }
+    function readfile(link){
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = "http://localhost:3000/readfile";
 
-            console.log(link.value);
-
-        }
-        function readfile(link){
-            const form = document.createElement('form');
-            form.method = 'post';
-            form.action = "http://localhost:3000/readfile";
-
-            const hiddenField= document.createElement('input');
-            hiddenField.type='hidden';
-            hiddenField.name='file_name';
-            hiddenField.value = link.textContent;
+        const hiddenField= document.createElement('input');
+        hiddenField.type='hidden';
+        hiddenField.name='file_name';
+        hiddenField.value = link.textContent;
 
 
-            form.appendChild(hiddenField);
-            document.body.appendChild(form);
-            form.submit();
-            console.log(desc.value);
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+        form.submit();
+        console.log(desc.value);
 
-        }
-        function deletedir(link){
-            const deletedirform = document.createElement('form');
-            deletedirform.method = 'post';
-            deletedirform.action = "http://localhost:3000/rmdir";
+    }
+    function deletedir(link){
+        const deletedirform = document.createElement('form');
+        deletedirform.method = 'post';
+        deletedirform.action = "http://localhost:3000/rmdir";
 
-            const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = "del_dirname";
-            hiddenField.value = link.value;
-            deletedirform.appendChild(hiddenField);
-            document.body.appendChild(deletedirform);
-            deletedirform.submit();
-
-
-        }
-
-        function deletefile(link){
-            const deletefileform = document.createElement('form');
-            deletefileform.method = 'post';
-            deletefileform.action = "http://localhost:3000/rmFile";
-
-            const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = "del_filename";
-            hiddenField.value = link.value;
-
-            deletefileform.appendChild(hiddenField);
-            document.body.appendChild(deletefileform);
-            deletefileform.submit();
-
-        }
-        function renamereq(link){
-            <!--보류..-->
-
-            const renamereqform = document.createElement('form');
-
-            renamereqform.method = 'post';
-            renamereqform.action = "http://localhost:3000/rename";
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = "del_dirname";
+        hiddenField.value = link.value;
+        deletedirform.appendChild(hiddenField);
+        document.body.appendChild(deletedirform);
+        deletedirform.submit();
 
 
-            const hiddenrename = document.createElement('input');
-            hiddenrename.type = 'hidden';
-            hiddenrename.name = "old_name";
-            hiddenrename.value = link.value;
+    }
 
-            document.getElementById('oid').value=link.value;
-            document.getElementById('nid').value=link.value;
+    function deletefile(link){
+        const deletefileform = document.createElement('form');
+        deletefileform.method = 'post';
+        deletefileform.action = "http://localhost:3000/rmFile";
+
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = "del_filename";
+        hiddenField.value = link.value;
+
+        deletefileform.appendChild(hiddenField);
+        document.body.appendChild(deletefileform);
+        deletefileform.submit();
+
+    }
+    function renamereq(link){
+        <!--보류..-->
+
+        const renamereqform = document.createElement('form');
+
+        renamereqform.method = 'post';
+        renamereqform.action = "http://localhost:3000/rename";
 
 
-A
-            renamereqform.appendChild(hiddenrename);
-            document.body.appendChild(renamereqform);
-
-
-            renamereqform.submit();
+        const hiddenrename = document.createElement('input');
+        hiddenrename.type = 'hidden';
+        hiddenrename.name = "old_name";
+        hiddenrename.value = link.value;
 
 
 
-        }
-        function editf(link){
-            const editfileform = document.createElement('form');
-            editfileform.method = 'post';
-            editfileform.action = "http://localhost:3000/editfile";
+        document.getElementById('oid').value=link.value;
 
 
-            const eittitle = document.createElement('input');
-            eittitle.type = 'hidden';
-            eittitle.name = "title";
-            eittitle.value = link.textContent;
-            console.log(link.value);
 
-            const editdescription = document.createElement('input');
-            editdescription.name="description";
+        renamereqform.appendChild(hiddenrename);
+        document.body.appendChild(renamereqform);
 
-            editfileform.appendChild(eittitle);
-            editfileform.appendChild(editdescription);
-            document.body.appendChild(editfileform);
-            editfileform.submit();
-        }
-    </script>
+        renamereqform.submit();
+
+
+
+    }
+    function editf(link){
+        const editfileform = document.createElement('form');
+        editfileform.method = 'post';
+        editfileform.action = "http://localhost:3000/editfile";
+
+
+        const eittitle = document.createElement('input');
+        eittitle.type = 'hidden';
+        eittitle.name = "title";
+        eittitle.value = link.textContent;
+        console.log(link.value);
+
+        const editdescription = document.createElement('input');
+        editdescription.name="description";
+
+        editfileform.appendChild(eittitle);
+        editfileform.appendChild(editdescription);
+        document.body.appendChild(editfileform);
+        editfileform.submit();
+    }
+</script>
 </body>
 </html>
