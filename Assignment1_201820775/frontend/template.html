@@ -60,6 +60,8 @@
 
 
 
+
+
     <div>
         <div id="dirMyModal" class="dirmodal">
             <div class="dirmodal-content">
@@ -224,44 +226,33 @@
         }
         function renamereq(link){
             <!--보류..-->
-            const renamereqform = renameform;
+            const renamereqform = document.createElement('form');
 
             renamereqform.method = 'post';
             renamereqform.action = "http://localhost:3000/rename";
 
 
-            const hiddenrename = renameold;
+            const hiddenrename = document.createElement('input');
             hiddenrename.type = 'hidden';
             hiddenrename.name = "old_name";
             hiddenrename.value = link.value
+            console.log(link.value);
 
-            const newrename = renamenew;
-            newrename.type='text';
-            newrename.name='new_name';
-            newrename.value = link.text;
+            const newtxt = document.createElement('textarea');
+            newtxt.name="renamearea";
 
-            const newrename2 = renamesubmit;
-            newrename2.type="submit";
-            newrename2.value="renamerequest"
+            const renabtn = document.createElement('button');
+            renabtn.type="submit";
+            renabtn.textContent="Rename";
 
-            respan.onclick = function (){
-                remodal.style.display= "none";
-            }
 
-            window.onclick = function(event) {
-
-                if(event.target==remodal){
-                    remodal.style.display="none";
-                }
-            }
-            newrename2.onclick = function(){
-                filmodal.style.display="block";
-            }
 
 
             renamereqform.appendChild(hiddenrename);
-            renamereqform.appendChild(newrename);
-            renamereqform.appendChild(newrename2);
+            renamereqform.appendChild(newtxt);
+            renamereqform.appendChild(renabtn);
+
+
             document.body.appendChild(renamereqform);
             renamereqform.submit();
 

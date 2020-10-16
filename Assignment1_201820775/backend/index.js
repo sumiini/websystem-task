@@ -50,6 +50,7 @@ var app= http.createServer(function(request,response){
                 let html = tmp1.toString().replace('%', lsinfo);
                 html=html.replace('?',file_name);
                 html=html.replace('$',file_content);
+                html = html.replace('@',file_name);
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 response.end(html);
             });
@@ -207,15 +208,13 @@ var app= http.createServer(function(request,response){
 
             var post = qs.parse(body);
             var old_name = post.old_name;
-            var new_name = post.new_name;
+            var renamearea = post.renamearea;
 
-            var pp = path.join(cur_path,new_name);
-            fs.rename(old_name,new_name,function(err){
-                fs.writeFile(pp,'ggg','utf8',function (err){
+
+            fs.rename(cur_path+"/"+old_name,cur_path+"/"+renamearea,function(err){
                     response.writeHead(302,{Location:`/`});
                     response.end('success');
-                    console.log(old_name);
-                });
+                    console.log(post);
 
 
             });
