@@ -30,7 +30,7 @@ var app= http.createServer(function(request,response){
 
 
                     var stat = fs.statSync(cur_path+"/"+element);
-                    var time = stat.ctime.getFullYear() + "-"+stat.ctime.getMonth() + "-"+stat.ctime.getDate();
+                    var time = stat.mtime.getFullYear() + "-"+Number(stat.mtime.getMonth()+1) + "-"+stat.mtime.getDate();
                     var size = stat.size.toString();
 
                     if(stat.isDirectory()){
@@ -166,12 +166,13 @@ var app= http.createServer(function(request,response){
         request.on('end',function(){
             var post = qs.parse(body);
             var del_dirname =post.del_dirname;
-            var rmdirpath = path.join(cur_path,del_dirname);
+            var dpath = path.join(cur_path,del_dirname);
 
-            fs.rmdir(rmdirpath,function (err){
+            fs.rmdir(dpath+"/",function (err){
 
                 response.writeHead(302,{Location:"http://localhost:3000/"});
                 response.end('success');
+                console.log(dpath);
 
             });
 
