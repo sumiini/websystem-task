@@ -1,0 +1,11 @@
+extends layout.pug
+
+
+block content
+    img(name="movie_poster")
+    h1(name="movie_name")
+    div(name="actor")
+    div(name="genre")
+    -for(var idx=0; idx<data.rating; idx++)
+        img(src='/images/star.svg' class='rating-star-img')
+    button(name="back")

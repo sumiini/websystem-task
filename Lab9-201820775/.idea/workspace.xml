@@ -20,12 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8dc5ac-0e53-471b-8a46-8f797d903c5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myapp/views/result.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/layout.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/layout.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Pug File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,6 +52,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -51,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604210655399</updated>
       <workItem from="1604210656837" duration="175000" />
-      <workItem from="1604210851347" duration="574000" />
+      <workItem from="1604210851347" duration="3420000" />
     </task>
     <servers />
   </component>
