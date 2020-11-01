@@ -5,5 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+/*
+* router.get('/result.pug',function(req,res,next){
+*  res.render('result', { title: 'Ajou Movie Information' });
+*});
+*/
 
 module.exports = router;

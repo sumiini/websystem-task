@@ -20,15 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8dc5ac-0e53-471b-8a46-8f797d903c5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myapp/views/index.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment1_201820775.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/index.pug" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/layout.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/result.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/result.jade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/error.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/error.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/layout.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/result.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/result.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <updated>1604210655399</updated>
       <workItem from="1604210656837" duration="175000" />
       <workItem from="1604210851347" duration="3584000" />
-      <workItem from="1604242990640" duration="3469000" />
+      <workItem from="1604242990640" duration="5776000" />
     </task>
     <servers />
   </component>
