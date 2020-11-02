@@ -7,6 +7,6 @@ a {
   color: #00B7FF;
 }
 
-h1,h2,p,button,img,div,input,label,a{
+h1,h2,p,div,input{
   text-align: center;
 }

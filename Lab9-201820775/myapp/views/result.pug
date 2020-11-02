@@ -2,14 +2,16 @@ extends layout
 
 
 block content
-    img(src=`${data.movie_imgurl}`)
-    hr
-    h1 #{data.movie_title}
-    hr
-    p #{data.movie_actors}
-    hr
-    p #{data.movie_genre}
-    hr
+    div(style="text-align: center;")
+        img(src=`${data.movie_imgurl}` )
+        hr
+        h1 #{data.movie_title}
+        hr
+        p #{data.movie_actors}
+        hr
+        p #{data.movie_genre}
+        hr
+
     div
         -for (var idx = 0; idx < data.rating; idx++)
             img(src='/images/star.svg' class='rating-star-img' width="30" height="30")
