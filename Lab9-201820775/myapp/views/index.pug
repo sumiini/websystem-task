@@ -4,38 +4,38 @@ block content
   h1= title
   h2 Register Movie
 
-  form
+  form(method="post" action="/result")
     p Please enter the movie information to add a review.
     br
-    br
-    input(type=text id="movie_title")
-    br
-    br
-    input(type=text id="actors")
-    br
-    br
-    input(type=text id="genre")
-    br
-    br
-    input(type=text id="img_url")
+    div
+      input(type=text name="movie_title")
+      br
+      br
+      input(type=text name="movie_actors")
+      br
+      br
+      input(type=text name="movie_genre")
+      br
+      br
+      input(type=text name="movie_imgurl")
+    div
+      h3 Movie Ratings
+        br
+        label 0
+          input(type="radio" value=0 name="rating")
+        label 1
+          input(type="radio" value=1 name="rating")
+        label 2
+          input(type="radio" value=2 name="rating")
+        label 3
+          input(type="radio" value=3 name="rating")
+        label 4
+          input(type="radio" value=4 name="rating")
+        label 5
+          input(type="radio" value=5 name="rating")
+        br
+        input(type="submit" value="submit" )
 
-    h3 Movie Ratings
-
-    label 0
-    input(type="radio" value="0" name="rating")
-    label 1
-    input(type="radio" value="1" name="rating")
-    label 2
-    input(type="radio" value="2" name="rating")
-    label 3
-    input(type="radio" value="3" name="rating")
-    label 4
-    input(type="radio" value="4" name="rating")
-    label 5
-    input(type="radio" value="5" name="rating")
-
-    br
-    input(type="submit" value="submit")
 
 
 

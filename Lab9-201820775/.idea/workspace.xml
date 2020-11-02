@@ -24,13 +24,11 @@
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/routes/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/error.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/error.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/layout.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/layout.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/result.jade" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/result.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views/result.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/result.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,9 @@
       <updated>1604210655399</updated>
       <workItem from="1604210656837" duration="175000" />
       <workItem from="1604210851347" duration="3584000" />
-      <workItem from="1604242990640" duration="5776000" />
+      <workItem from="1604242990640" duration="5895000" />
+      <workItem from="1604288931547" duration="596000" />
+      <workItem from="1604316165535" duration="15389000" />
     </task>
     <servers />
   </component>
@@ -93,5 +93,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="801" y="121" key="RollbackChangesDialog" timestamp="1604327253410">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="801" y="121" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604327253410" />
   </component>
 </project>
