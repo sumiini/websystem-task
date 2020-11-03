@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 
           })
 
-          myPromise(req.body.movie_imgurl.replace("/images/","")===element&&req.body.movie_title===""&&req.body.movie_actors!==""&&req.body.movie_genre!=="" ).then((result)=>{
+          myPromise(req.body.movie_imgurl.replace("/images/","")===element&&req.body.movie_title!==""&&req.body.movie_actors!==""&&req.body.movie_genre!=="" ).then((result)=>{
 
           }).catch((err)=>{
             res.redirect('/')

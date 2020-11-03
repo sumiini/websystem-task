@@ -22,7 +22,6 @@
     <list default="true" id="fe8dc5ac-0e53-471b-8a46-8f797d903c5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Assignment1_201820775.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/routes/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/result.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <workItem from="1604242990640" duration="5895000" />
       <workItem from="1604288931547" duration="596000" />
       <workItem from="1604316165535" duration="19949000" />
-      <workItem from="1604370816014" duration="13068000" />
+      <workItem from="1604370816014" duration="13162000" />
     </task>
     <servers />
   </component>
