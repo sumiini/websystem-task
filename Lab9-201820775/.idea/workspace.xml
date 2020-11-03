@@ -23,9 +23,7 @@
       <change beforePath="$PROJECT_DIR$/../Assignment1_201820775.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/public/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/routes/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views/result.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views/result.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,8 @@
       <workItem from="1604210851347" duration="3584000" />
       <workItem from="1604242990640" duration="5895000" />
       <workItem from="1604288931547" duration="596000" />
-      <workItem from="1604316165535" duration="19793000" />
+      <workItem from="1604316165535" duration="19949000" />
+      <workItem from="1604370816014" duration="13068000" />
     </task>
     <servers />
   </component>
