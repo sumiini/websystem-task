@@ -22,9 +22,9 @@
     <list default="true" id="9ff189f9-158b-4a82-b36e-784f19030a64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Assignment1_201820775.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp9/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp9/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp9/routes/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/routes/movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp9/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp9/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp9/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/views/layout.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp9/views/newmovie.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp9/views/newmovie.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab9-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab9-201820775/.idea/workspace.xml" afterDir="false" />
@@ -71,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604650183527</updated>
-      <workItem from="1604650184629" duration="23482000" />
+      <workItem from="1604650184629" duration="25632000" />
     </task>
     <servers />
   </component>

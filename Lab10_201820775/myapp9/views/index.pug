@@ -1,15 +1,18 @@
 extends layout
 
 block content
-  ul
-    each movie in movies
-        img(src=`${movie.url}`)
-        br
-        div
-          h2 #{movie.title} / #{movie.year}
-        br
-        br
-        br
+    h1(style="text-align:center ;") Movies
+    ul
+        each movie in movies
+            div(id="content")
+                img(src=`${movie.url}`)
+                br
+                div
+                h2 #{movie.title} / #{movie.year}
+                br
+                br
+                br
+
 
 
 

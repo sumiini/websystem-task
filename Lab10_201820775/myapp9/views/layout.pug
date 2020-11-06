@@ -1,12 +1,15 @@
 doctype html
 html
   head
-    h1 Movie List
+
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    form(method="get" action="/")
-      input(type="submit" value="Home")
+    div(id="fo")
+      form(method="get" action="/")
+        input(type="submit" value="Home")
+      form(method="get" action="/newmovie")
+        input(type="submit" value="New Movie")
 
-    form(method="get" action="/newmovie")
-      input(type="submit" value="New Movie")
+
+
     block content
