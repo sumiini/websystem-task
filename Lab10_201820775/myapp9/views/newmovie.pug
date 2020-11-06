@@ -2,16 +2,21 @@ extends layout
 
 block content
     h2 Add Movie
-    form(method="POST",action="/routes/movie/create")
+    form(action="/create",method="POST")
         br
         label Title
         br
-        input(name="title")
+        input(type="text",name="title")
+        br
         br
         label Year
         br
-        input(name="year")
+        input(type="text",name="year")
+        br
         br
         label Image Path
         br
-        input(name="url")
+        input(type="text",name="url")
+        br
+        br
+        input(type="submit" value="Add Movie")

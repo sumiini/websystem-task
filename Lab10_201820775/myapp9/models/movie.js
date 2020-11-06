@@ -21,7 +21,8 @@ const movieSchema = new Schema({
         required:true,
         default:false,
     },
-});
+
+})
 
 movieSchema.plugin(mongooseAutoInc.plugin,'movie');
 

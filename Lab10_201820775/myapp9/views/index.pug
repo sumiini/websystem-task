@@ -2,6 +2,17 @@ extends layout
 
 block content
   ul
+    each movie in movies
+        img(src=`${movie.url}`)
+        br
+        div
+          h2 #{movie.title} / #{movie.year}
+        br
+        br
+        br
+
+
+
 
 
 

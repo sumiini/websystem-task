@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    h1 Movie List
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     form(method="get" action="/")
@@ -9,5 +9,4 @@ html
 
     form(method="get" action="/newmovie")
       input(type="submit" value="New Movie")
-
     block content
