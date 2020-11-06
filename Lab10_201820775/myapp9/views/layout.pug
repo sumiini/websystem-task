@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    form(method="get" action="/")
+      input(type="submit" value="Home")
+
+    form(method="get" action="/newmovie")
+      input(type="submit" value="New Movie")
+
+    block content
