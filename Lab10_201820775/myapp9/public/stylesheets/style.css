@@ -43,3 +43,12 @@ input[type=submit] {
   margin-left: 10rem;
   background-color: bisque;
 }
+
+#htitle,#newmotitle{
+  text-align: center;
+  padding:5px 15px;
+  background: lightgoldenrodyellow;
+  border: 7px double coral;
+  margin-right: 40%;
+  margin-left: 40%;
+}
