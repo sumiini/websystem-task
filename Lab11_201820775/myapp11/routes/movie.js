@@ -16,16 +16,33 @@ router.post('/create',function(req,res,next){
     });
 });
 
-router.get('/routes/movie/read/:id',function(req,res,next){
-
+router.get('/read/:id',function(req,res,next){
+    Movie.find(req.body,(err, movies)=>{
+        res.render('editfile', {movies: movies});
+    });
 });
 
-router.get('/routes/movie/update/:id',function(req,res,next){
 
+
+router.get('/update/:id',function(req,res,next){
+    Movie.findByIdAndUpdate(req.params.id, req.body, (err, movies)=>{
+        res.status(200).json({movies : movies});
+    });
 });
 
-router.get('/routes/movie/delete/:id',function(req,res,next){
-
+router.get('/delete/:id',function(req,res,next){
+    console.log(req.params.id);
+    Movie.deleteOne({_id : req.params.id}).then((result)=>{
+        var response = {
+            success : true
+        }
+        res.status(200).json(response);
+    }).catch((err)=>{
+        var response = {
+            success : false
+        }
+        res.status(500).json(response);
+    });
 });
 
 module.exports = router;

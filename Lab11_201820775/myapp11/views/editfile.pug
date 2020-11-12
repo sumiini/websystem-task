@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    form(method="POST" action="/routes/movie/update/:id")
+        each movie in movies
+            div
+                label Title
+                input(name="title" id="edittitle")
+
+                label Year
+                input(name="year" id="edityear" )
+
+                label Image Path
+                input(name="url" id="editimage" )
+
+                input(id="edit_id", type="hidden")
+                input(type="submit" value="Edit Movie")

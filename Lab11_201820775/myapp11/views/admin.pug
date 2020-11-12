@@ -1,3 +1,21 @@
 extends layout
 
 block content
+    h1(id="adminmovie") Admin Movies
+    ul(id="adminmovielist")
+        each movie in movies
+            div(id="content")
+                img(src=`${movie.url}`)
+                br
+                div
+                h2 #{movie.title} / #{movie.year}
+                br
+                form(method="get" action="/routes/movie/read/:id")
+                    input(type="submit" value="EDIT")
+
+                form(method="post" action="/routes/movie/delete/:id")
+                    input(type="submit" value="DELETE")
+
+                form(method="post" action="/routes/movie/update/:id")
+                    input(type="submit" value="인기영화")
+                br
