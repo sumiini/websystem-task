@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h2(id="newmotitle") Add Movie
+    div(id="newbox")
+        form(id="newmo" action="routes/movie/create",method="POST")
+            br
+            label Title
+            br
+            input(type="text",name="title")
+            br
+            br
+            label Year
+            br
+            input(type="text",name="year")
+            br
+            br
+            label Image Path
+            br
+            input(type="text",name="url")
+            br
+            br
+            input(type="submit" value="Add Movie")

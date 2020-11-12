@@ -20,15 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03764206-de7b-4ecb-93ff-0a40e76cb45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myapp11/models/movie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp11/public/javascripts/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp11/routes/movie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp11/views/admin.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp11/views/editmovie.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp11/views/newmovie.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment1_201820775.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab10_201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab10_201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab10_201820775/myapp9/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab10_201820775/myapp9/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/models/movie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/public/javascripts/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/routes/movie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/views/admin.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/views/editmovie.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/views/newmovie.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/models/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/models/movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/public/javascripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/routes/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/routes/movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/views/admin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/admin.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/views/editmovie.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/editmovie.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp11/views/newmovie.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/newmovie.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5-201820775/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab9-201820775/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab9-201820775/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -57,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mongoose_sample_ajax" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,6 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605168079493</updated>
       <workItem from="1605168080604" duration="1408000" />
+      <workItem from="1605172070627" duration="6870000" />
     </task>
     <servers />
   </component>
@@ -91,6 +103,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="172" y="167" key="FileChooserDialogImpl" timestamp="1605169550218">
