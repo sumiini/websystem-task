@@ -1,18 +1,20 @@
 extends layout
 
 block content
-    form(method="POST" action="/routes/movie/update/:id")
+        form(method="POST" action="/routes/movie/update/:id")
 
 
-        div
-            label Title
-            input(name="title" id="edittitle")
+            div
+                label Title
+                input(type="text" name="title" id="edittitle")
 
-            label Year
-            input(name="year" id="edityear" )
+                label Year
+                input(type="text" name="year" id="edityear" )
 
-            label Image Path
-            input(name="url" id="editimage" )
+                label Image Path
+                input(type="text" name="url" id="editimage" )
 
-            input(id="edit_id", type="hidden")
-            input(type="button" onclick="edit()" value="Edit Movie")
+                input(id="edit_id", type="hidden")
+
+
+                input(type="submit" onclick="ajaxEdit()" value="Edit Movie")

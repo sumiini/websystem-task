@@ -31,7 +31,6 @@
       <change beforePath="$PROJECT_DIR$/../Lab11-201820775/myapp11/views/newmovie.pug" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp11/public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/public/javascripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp11/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp11/routes/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/routes/movie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp11/views/admin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/admin.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp11/views/editfile.pug" beforeDir="false" afterPath="$PROJECT_DIR$/myapp11/views/editfile.pug" afterDir="false" />
@@ -84,7 +83,7 @@
       <workItem from="1605168080604" duration="1408000" />
       <workItem from="1605172070627" duration="17226000" />
       <workItem from="1605250117555" duration="4586000" />
-      <workItem from="1605275115417" duration="6258000" />
+      <workItem from="1605275115417" duration="9982000" />
     </task>
     <servers />
   </component>
