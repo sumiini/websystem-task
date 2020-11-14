@@ -29,25 +29,8 @@ function ajaxEdit(){
     xhr.onload = function(){
         alert("수정");
         if(xhr.status==200||xhr.status===201){
-            let response = xhr.response;
-            let movies = response.movies;
+            alert("수정 완료");
 
-            let row = document.getElementById("movie"+movie._id);
-            row.innerHTML = "";
-            row.setAttribute("id", "movie"+movie._id);
-
-
-            let editInput = document.createElement("input");
-            editInput.setAttribute("type", "button");
-            let ntitle = etitle.value;
-            let nyear = eyear.value;
-            let nurl = eurl.value;
-
-            editInput.onclick = ()=>{ edit(movie._id, ntitle,nyear,nurl);};
-            editInput.value = "Call Edit";
-
-            row.appendChild(input);
-            row.appendChild(editInput);
         }
         else{
             alert("수정 실패");
