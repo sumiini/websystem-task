@@ -1,6 +1,5 @@
 
 function edit(id, title,year,url){
-
     let edit_id = document.getElementById("edit_id");
     let edititle =  document.getElementById("edittitle");
     let ediyear = document.getElementById("edityear");
@@ -11,6 +10,25 @@ function edit(id, title,year,url){
     edititle.value = title;
     ediyear.value = year;
     ediurl.value = url;
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onload = function(){
+
+        if(xhr.status === 200 || xhr.status === 201){
+
+            alert("페이지 이동 성공!");
+
+        }else {
+            alert("페이지 이동 실패");
+        }
+    }
+
+    xhr.open("GET", "/routes/movie/read/"+ id);
+    xhr.setRequestHeader("Content-Type", 'application/json');
+    xhr.send();
+
+
 
 }
 

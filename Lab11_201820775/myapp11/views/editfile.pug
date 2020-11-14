@@ -1,6 +1,5 @@
-extends layout
 
-block content
+h2 edit movie
     each movie in movies
         form(method="POST" action="/routes/movie/update/"+movie._id)
 
