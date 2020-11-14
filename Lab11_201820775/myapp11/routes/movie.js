@@ -31,9 +31,17 @@ router.post('/update/:id',function(req,res,next){
 });
 
 router.post('/delete/:id',function(req,res,next){
+    console.log(req.params.id);
     Movie.deleteOne({_id : req.params.id}).then((result)=>{
-
-        res.redirect('http://localhost:3000/admin');
+        var response = {
+            success : true
+        }
+        res.status(200).json(response);
+    }).catch((err)=>{
+        var response = {
+            success : false
+        }
+        res.status(500).json(response);
     });
 });
 
