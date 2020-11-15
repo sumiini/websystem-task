@@ -1,32 +1,15 @@
 
 function edit(id, title,year,url){
-    let edit_id = document.getElementById("edit_id");
-    let edititle =  document.getElementById("edittitle");
-    let ediyear = document.getElementById("edityear");
-    let ediurl = document.getElementById("editimage");
 
 
-    edit_id.value = id;
-    edititle.value = title;
-    ediyear.value = year;
-    ediurl.value = url;
+    let ff = document.createElement("form");
+    ff.setAttribute("method","GET");
+    ff.setAttribute("action","/routes/movie/read/"+id);
 
-    var xhr = new XMLHttpRequest();
 
-    xhr.onload = function(){
+    document.body.appendChild(ff);
+    ff.submit();
 
-        if(xhr.status === 200 || xhr.status === 201){
-
-            alert("페이지 이동 성공!");
-
-        }else {
-            alert("페이지 이동 실패");
-        }
-    }
-
-    xhr.open("GET", "/routes/movie/read/"+ id);
-    xhr.setRequestHeader("Content-Type", 'application/json');
-    xhr.send();
 
 
 
@@ -106,6 +89,7 @@ function deletemovie(id){
         if(xhr.status === 200 || xhr.status === 201){
             let deletedMovie = document.getElementById("movie"+id);
             deletedMovie.remove();
+
             alert("삭제 성공!");
         }else {
             alert("삭제 실패");

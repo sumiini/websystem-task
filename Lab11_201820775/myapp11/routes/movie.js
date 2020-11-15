@@ -17,9 +17,13 @@ router.post('/create',function(req,res,next){
 });
 
 router.get('/read/:id',function(req,res,next){
-    Movie.find(req.body,(err, movies)=>{
-        res.render('editfile', {movies: movies});
+    Movie.findById(req.params.id,req.body,(err,movies)=>{
+        res.render('editfile', {mid: req.params.id ,movie:movies});
+
     });
+    // Movie.find(req.body,(err, movies)=>{
+    //     res.render('editfile', {movie: movies});
+    // });
 });
 
 

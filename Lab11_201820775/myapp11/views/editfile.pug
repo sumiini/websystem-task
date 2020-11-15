@@ -1,18 +1,20 @@
 
-h2 edit movie
-    each movie in movies
-        form(method="POST" action="/routes/movie/update/"+movie._id)
+extends layout
+block content
+        h2(id="htitle") edit movie
+
+            form(method="POST" action="/routes/movie/update/" +`${mid}`)
 
 
-            div
-                label Title
-                input(type="text" name="title" id="edittitle")
+                div
+                    label Title
+                    input(type="text" name="title" id="edittitle" )
 
-                label Year
-                input(type="text" name="year" id="edityear" )
+                    label Year
+                    input(type="text" name="year" id="edityear" )
 
-                label Image Path
-                input(type="text" name="url" id="editimage" )
+                    label Image Path
+                    input(type="text" name="url" id="editimage" )
 
-                input(id="edit_id", type="hidden")
-                input(type="submit" onclick="ajaxEdit()" value="Edit Movie")
+                    input(id="edit_id", type="hidden")
+                    input(type="submit" value="Edit Movie")
