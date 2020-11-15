@@ -7,8 +7,14 @@ block content
             div(id="movie"+movie._id)
                 img(src=`${movie.url}`)
                 br
-                div
+
                 h2 #{movie.title} / #{movie.year}
+                -if(movie.trending===true)
+                        img(src='/images/star.svg' width="30" height="30")
+                -if(movie.trending===false)
+                        img(src='/images/bstar.svg' width="30" height="30")
+
+
                 br
 
 
@@ -18,8 +24,11 @@ block content
 
                 input(type="button" onclick="deletemovie("+movie._id+")" value="delete" )
 
-                form(method="POST" action="/routes/movie/update/:id")
-                    input(type="submit" value="인기영화")
+
+                input(type="button" onclick="trendo("+movie._id+")" value="인기 O")
+                input(type="button" onclick="trendx("+movie._id+")" value="인기 X")
+                //form(method="POST" action="/routes/movie/update/:id")
+                //    input(type="submit" value="인기영화")
                 br
 
                 script(src='/javascripts/main.js')

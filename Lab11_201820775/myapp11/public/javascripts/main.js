@@ -15,6 +15,45 @@ function edit(id, title,year,url){
 
 }
 
+function trendo(id){
+
+    let trendof = document.createElement("form");
+    trendof.setAttribute("method","POST");
+    trendof.setAttribute("action","/routes/movie/update/"+id);
+
+
+
+    let trendoinput = document.createElement("input");
+    trendoinput.setAttribute("type","hidden");
+    trendoinput.setAttribute("name","trending");
+    trendoinput.value = "true";
+
+    trendof.appendChild(trendoinput);
+
+    document.body.appendChild(trendof);
+    trendof.submit();
+
+}
+
+function trendx(id){
+
+    let trendxf = document.createElement("form");
+    trendxf.setAttribute("method","POST");
+    trendxf.setAttribute("action","/routes/movie/update/"+id);
+
+
+
+    let trendxinput = document.createElement("input");
+    trendxinput.setAttribute("type","hidden");
+    trendxinput.setAttribute("name","trending");
+    trendxinput.value = "false";
+
+    trendxf.appendChild(trendxinput);
+    document.body.appendChild(trendxf);
+    trendxf.submit();
+
+}
+
 function ajaxEdit(){
     var xhr = new XMLHttpRequest();
     var etitle = document.getElementById("edittitle");

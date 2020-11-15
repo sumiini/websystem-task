@@ -30,6 +30,7 @@ router.get('/read/:id',function(req,res,next){
 
 router.post('/update/:id',function(req,res,next){
     Movie.findByIdAndUpdate(req.params.id, req.body, (err, movies)=>{
+
         res.redirect('http://localhost:3000/admin');
     });
 });

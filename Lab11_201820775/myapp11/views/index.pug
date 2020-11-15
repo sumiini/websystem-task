@@ -7,11 +7,15 @@ block content
       div(id="content")
         img(src=`${movie.url}`)
         br
-        div
+
         h2 #{movie.title} / #{movie.year}
-        br
-        br
+        -if (movie.trending === true)
+              img(src='/images/star.svg' width="30" height="30")
+        -if (movie.trending === false)
+              img(src='/images/bstar.svg' width="30" height="30")
+
         br
 
 
-  ul(id="trendmovielist")
+
+
