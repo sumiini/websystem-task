@@ -8,13 +8,13 @@ block content
 
                 div
                     label Title
-                    input(type="text" name="title" id="edittitle" )
+                    input(type="text" name="title" id="edittitle" value=`${movie.title}`)
 
                     label Year
-                    input(type="text" name="year" id="edityear" )
+                    input(type="text" name="year" id="edityear" value=`${movie.year}`)
 
                     label Image Path
-                    input(type="text" name="url" id="editimage" )
+                    input(type="text" name="url" id="editimage" value=`${movie.url}`)
 
                     input(id="edit_id", type="hidden")
                     input(type="submit" value="Edit Movie")
