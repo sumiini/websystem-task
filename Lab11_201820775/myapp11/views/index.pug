@@ -1,14 +1,13 @@
 extends layout
 
 block content
-  h1(id="htitle") Movies
+  h1(id="htitle") < Movies >
   ul(id="movielist")
     each movie in movies
       div(id="content")
         p
         p
         img(src=`${movie.url}`)
-        br
 
         h2 #{movie.title} / #{movie.year}
         -if (movie.trending === true)
@@ -18,6 +17,21 @@ block content
 
         br
         p
+  p
+  p
+  br
+  h1(id="ttitle") < Trending Movie >
+  ul(id="tmovielist")
+      each tmovie in movies
+        div(id="tcon")
+          p
+          p
+          -if(tmovie.trending ===true)
+              img(src=`${tmovie.url}`)
+              br
+              h2 #{tmovie.title} / #{tmovie.year}
+                img(src='/images/star.svg' width="30" height="30")
+
 
 
 

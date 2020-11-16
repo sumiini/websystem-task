@@ -38,6 +38,12 @@ input[type=button] {
   cursor: pointer;
 }
 
-#adminmovielist,#content,#htitle,#adminmovie{
+#adminmovielist,#content,#htitle,#adminmovie,#ttitle,#tcon,#tmovielist{
   text-align: center;
+}
+
+#htitle,#ttitle,#adminmovie{
+  color: darkred;
+  background-color: cornsilk;
+
 }
