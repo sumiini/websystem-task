@@ -1,20 +1,24 @@
 
 extends layout
 block content
-        h2(id="htitle") edit movie
+        h2(id="htitle") Edit Movie
 
             form(method="POST" action="/routes/movie/update/" +`${mid}`)
 
 
-                div
+                div(id="eidtdiv")
+                    p
                     label Title
+                    br
                     input(type="text" name="title" id="edittitle" value=`${movie.title}`)
-
+                    p
                     label Year
+                    br
                     input(type="text" name="year" id="edityear" value=`${movie.year}`)
-
+                    p
                     label Image Path
+                    br
                     input(type="text" name="url" id="editimage" value=`${movie.url}`)
-
+                    p
                     input(id="edit_id", type="hidden")
                     input(type="submit" value="Edit Movie")

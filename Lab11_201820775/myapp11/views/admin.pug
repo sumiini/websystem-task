@@ -5,30 +5,29 @@ block content
     ul(id="adminmovielist")
         each movie in movies
             div(id="movie"+movie._id)
+                p
                 img(src=`${movie.url}`)
                 br
-
-                h2 #{movie.title} / #{movie.year}
+                p
+                h2(id="ups") #{movie.title} / #{movie.year}
                 -if(movie.trending===true)
-                        img(src='/images/star.svg' width="30" height="30")
+                        img(id="star" src='/images/star.svg' width="30" height="30")
                 -if(movie.trending===false)
-                        img(src='/images/bstar.svg' width="30" height="30")
+                        img(id="bstar" src='/images/bstar.svg' width="30" height="30")
 
 
                 br
+                p
+                input(type="button" onclick="edit("+movie._id+","+"'"+movie.title+"'"+","+"'"+movie.year+"'"+","+"'"+movie.url+"'"+")" value="Edit")
+
+                input(type="button" onclick="deletemovie("+movie._id+")" value="Delete" )
 
 
-                input(type="button" onclick="edit("+movie._id+","+"'"+movie.title+"'"+","+"'"+movie.year+"'"+","+"'"+movie.url+"'"+")" value="EditData")
-                //form(method="GET" action="/routes/movie/read/" + movie._id)
-                //    input(type="submit" onclick="edit(" + movie._id + ",'" + movie.title + "','" + movie.year + "','" + movie.url + "')" value="EditData")
+                input(type="button" onclick="trendo("+movie._id+")" value="trend O")
+                input(type="button" onclick="trendx("+movie._id+")" value="trend X")
 
-                input(type="button" onclick="deletemovie("+movie._id+")" value="delete" )
-
-
-                input(type="button" onclick="trendo("+movie._id+")" value="인기 O")
-                input(type="button" onclick="trendx("+movie._id+")" value="인기 X")
-                //form(method="POST" action="/routes/movie/update/:id")
-                //    input(type="submit" value="인기영화")
                 br
+                p
+                p
 
                 script(src='/javascripts/main.js')

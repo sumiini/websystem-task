@@ -18,19 +18,16 @@ router.post('/create',function(req,res,next){
 
 router.get('/read/:id',function(req,res,next){
     Movie.findById(req.params.id,req.body,(err,movies)=>{
-        res.render('editfile', {mid: req.params.id ,movie:movies});
+        res.render('editmovie', {mid: req.params.id ,movie:movies});
 
     });
-    // Movie.find(req.body,(err, movies)=>{
-    //     res.render('editfile', {movie: movies});
-    // });
+
 });
 
 
 
 router.post('/update/:id',function(req,res,next){
     Movie.findByIdAndUpdate(req.params.id, req.body, (err, movies)=>{
-
         res.redirect('http://localhost:3000/admin');
     });
 });

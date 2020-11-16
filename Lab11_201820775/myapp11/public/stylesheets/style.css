@@ -6,3 +6,38 @@ body {
 a {
   color: #00B7FF;
 }
+#newmo,#newmotitle{
+  text-align: center;
+}
+
+#newbox,#eidtdiv{
+  background-color : bisque;
+
+  /* 넓이 지정 */
+  margin-right: 30%;
+  margin-left: 30%;
+
+}
+
+#fo{
+  display: flex;
+  background-color: darksalmon;
+}
+
+input[type=submit] {
+  padding:5px 15px;
+  background: darksalmon;
+  border:0 none;
+  cursor:pointer;
+}
+
+input[type=button] {
+  padding: 5px 15px;
+  background: darksalmon;
+  border: 0 none;
+  cursor: pointer;
+}
+
+#adminmovielist,#content,#htitle,#adminmovie{
+  text-align: center;
+}
