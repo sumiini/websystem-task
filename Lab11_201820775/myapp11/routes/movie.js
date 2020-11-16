@@ -47,4 +47,12 @@ router.post('/delete/:id',function(req,res,next){
     });
 });
 
+// router.post('/delete/:id',function(req,res,next){
+//     Movie.deleteOne({_id : req.params.id}).then((result)=>{
+//         res.redirect('http://localhost:3000/admin');
+//     });
+// });
+
+
+
 module.exports = router;
