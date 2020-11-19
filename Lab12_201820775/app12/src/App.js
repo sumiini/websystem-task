@@ -3,65 +3,53 @@ import ReactDom from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 
-
-class Updatename extends React.Component{
-    render() {
-        return(
-            <h1>Hello ! {this.props.name}</h1>
-
-        );
-    }
-}
-
-
 class App extends React.Component{
-
     constructor(props) {
         super(props);
         this.state={
+            isClick:true,
             userName:""
         }
-    }
 
+    }
     addName=()=>{
         this.setState({userName:document.getElementById('inp').value});
+        this.setState({isClick:false});
 
     }
-
-
     render() {
+        if(this.state.isClick){
+
+            return(
+                <div className="App">
+                    <header className="App-header">
+                        <h1 id={"title"}>Who are you ?</h1>
+                        <input id={"inp"} />
+
+                        <button id={"btn"} onClick={this.addName}>OK</button>
+
+                    </header>
 
 
-        return(
+                </div>
+            )
+
+        }
+        else{
+            return(
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <h1>Hello, {this.state.userName} !</h1>
+
+                    </header>
 
 
+                </div>
+            )
+        }
 
 
-
-            <div className="App">
-                <header className="App-header">
-
-
-
-
-                    <h1 id={"title"}>Who are you ?</h1>
-                    <input id={"inp"}  />
-                    <button id={"btn"} onClick={this.addName}>OK</button>
-
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>Hello ! {this.state.userName}</h2>
-
-
-                </header>
-            </div>
-
-
-
-        );
-
-        // document.getElementById('btn').onclick=function () {
-        //     <h2>hello, {this.userName}</h2>
-        // }
 
     }
 }
@@ -70,40 +58,5 @@ class App extends React.Component{
 
 
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-
-
-// <img src={logo} className="App-logo" alt="logo" />
-// <p>
-//     Edit <code>src/App.js</code> and save to reload.
-// </p>
-// <a
-//     className="App-link"
-//     href="https://reactjs.org"
-//     target="_blank"
-//     rel="noopener noreferrer"
-// >
-//     Learn React
-// </a>
 
 export default App;
