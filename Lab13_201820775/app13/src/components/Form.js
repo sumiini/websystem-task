@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {createTodo} from '../actions/todo';
 
 const Form = ({dispatch})=>{
     let input
@@ -10,7 +11,7 @@ const Form = ({dispatch})=>{
 
                 <form onSubmit={e=>{
                     e.preventDefault()
-                    dispatch(CREATE_TODO(input.value))
+                    dispatch(createTodo(input.value))
                     input.value=''
                 }}>
                     <input ref={node=>input=node} type="text"></input>
@@ -53,4 +54,4 @@ const mapStateToProps = (state)=>{
 */ 
 
 
-export default connect()(Form);
+export default Form;
