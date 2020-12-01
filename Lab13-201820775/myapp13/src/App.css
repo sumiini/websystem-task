@@ -37,3 +37,16 @@
     transform: translateY(0px)
   }
 }
+
+#spant{
+  float: left;
+}
+
+#textLi{
+  display: flow;
+}
+
+#delForm,#togForm{
+  display: flex;
+
+}

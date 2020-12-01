@@ -11,7 +11,7 @@ console.log(store.getState());
 
 render(
     <Provider store={createStore(reducers)}>
-    <App />
+        <App />
     </Provider>
 )
 //action 을 reducer로 보낸다 = dispatch

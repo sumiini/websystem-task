@@ -1,24 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Form from './Form';
 import List from './List';
+import {useSelector} from "react-redux";
+import todo from "../reducers/todo";
 
 
-class TodoList extends React.Component{
+const TodoList=()=>{
 
-    render(){
+    const todoLs=useSelector(state=>state.todo)
+
         return(
             <div>
-                <span>todo 의 개수와 완료된 todo 개수</span>
+                <span>Total: {todoLs.length}   </span>
+                <sapn>Done: {todoLs.filter(v=>v.completed===true).length}</sapn>
                 <Form/>
                 <List/>
-    
             </div>
-                
         )
-    }
-    
-    
-    
+
 }
 
 export default TodoList;

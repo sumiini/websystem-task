@@ -1,66 +1,58 @@
 import React from 'react';
 import {toggleTodo} from '../actions/todo';
 import {deleteTodo} from '../actions/todo';
-import PropTypes from 'prop-types'
-import Form from './Form';
-import * as todo from '../actions/todo';
-import { configureStore } from '@reduxjs/toolkit'
-const store = configureStore({ reducer: todo })
+import {useDispatch, useSelector} from "react-redux";
+import '../App.css';
 
+const List =()=>{
+    const dispatch=useDispatch();
+    const todoLs=useSelector(state=>state.todo)
+    console.log(todoLs.map(i=>i.text))
 
-
-class List extends React.Component{
-
-  constructor(props) {
-    super(props);
-    
-  }
-
-    render(){
-        return(
-
+    return(
           <ul>
-            <h1>list</h1>
+              <h2>Todo List</h2>
+              {todoLs.map((i)=>(
+                      <li id={"textLi"} key={i.id} style={{backgroundColor:i.completed?'green':'white'}}>
+                          <span id={"spant"}>
+                              {i.text}
+                          </span>
+                          <br/>
 
-            <li>
-              <span>
-                {"text"+this.props.text}
-              </span>
-                  <form onSubmit={e=>{
-                    e.preventDefault()
-                    store.dispatch(toggleTodo())
-                    
-                  }}>
-                    <button type="submit">완료</button>
-                  </form>
 
-                  <form onSubmit={e=>{
-                    e.preventDefault()
-                    store.dispatch(deleteTodo())
-                    
-                  }}>
-                    <button type="submit">삭제</button>
-                  </form>
-                
-    
-            </li>
+
+                          <form id={"delForm"}
+                              onSubmit={e=>{
+                                  e.preventDefault()
+                                  dispatch(deleteTodo(i.id))
+                              }}
+                          >
+                              <button type="submit" >삭제</button>
+                          </form>
+
+                          <form id={"togForm"}
+                              onSubmit={e=>{
+                                  e.preventDefault()
+                                  dispatch(toggleTodo(i.id))
+                              }}
+                          >
+                              <button type="submit" >완료</button>
+
+
+                          </form>
+
+
+
+                      </li>
+                      ))}
+
 
           </ul>
-            
-        )
-    }
+    )
+
+
 }
 
 
-
-// List.propTypes = {
-//     todos: PropTypes.arrayOf(PropTypes.shape({
-//       id: PropTypes.number.isRequired,
-//       completed: PropTypes.bool.isRequired,
-//       text: PropTypes.string.isRequired
-//     }).isRequired).isRequired,
-//     toggleTodo: PropTypes.func.isRequired,
-//     deleteTodo:PropTypes.func.isRequired
-//   }
 
 export default List;
