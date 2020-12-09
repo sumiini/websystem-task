@@ -15,9 +15,6 @@ class Form extends React.Component {
     }
 
     async submit(){
-        //const data1={movie_name:this.form.movie_name.current.value}
-        //const data2={review_content:this.form.review_content.current.value}
-        //const data3={rate:this.form.rate.current.value}
         const data={
             movie_name:this.form.movie_name.current.value,
             review_content:this.form.review_content.current.value,

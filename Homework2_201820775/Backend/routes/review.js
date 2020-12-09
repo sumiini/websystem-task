@@ -4,13 +4,19 @@ var router = express.Router();
 const Review = require('../models/review');
 const cors = require('cors');
 router.use(cors());
-router.get('/',function(req,res,next){
-     //const [{movie_name,review_content,rate}]=req.params;
-     //console.log({movie_name})
-     //Review.find(function(err,rev){
-         
-     //})
 
+
+router.get('/',function(req,res,next){
+     
+     Review.find(function(err,rev){
+         
+         res.status(200).json({
+             
+             alldata:rev
+         });
+         console.log(rev);
+     })
+     
      
     console.log("hhi back-----get");
 });
@@ -30,7 +36,7 @@ router.post('/',function(req,res,next){
             'movie_name' : req.body.movie_name,
             'review_content' : req.body.review_content,
             'rate':req.body.rate
-          });
+        });
          //res.redirect('http://localhost:3000/');
      })
     console.log("db 저장하는 back입니다");
@@ -38,8 +44,10 @@ router.post('/',function(req,res,next){
 
 });
 
-// router.post('/:id',function(req,res,next){
+router.post('/:id',function(req,res,next){
+    console.log(req);
+    //Review.deleteOne({_id:})
 
-// });
+});
 
 module.exports=router;

@@ -13,7 +13,7 @@ class List extends React.Component {
     }
 
     deleteReviewById(id){
-        const result = this.state.reviews.filter(i=> i.Id !==id);
+        const result = this.state.reviews.filter(i=> i._id !==id);
         this.setState({reviews:result});
         
     }

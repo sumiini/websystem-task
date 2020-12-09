@@ -11,7 +11,7 @@ class Reviews extends React.Component{
         };
     }
     async componentDidMount(){
-        this.setState={reviews:request.getReviews()}
+        this.setState({reviews:request.getReviews()})
     }
 
     
