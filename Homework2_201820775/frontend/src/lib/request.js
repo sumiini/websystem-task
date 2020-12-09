@@ -11,14 +11,17 @@ export async function getReviews(){
 }
 
 export async function createReview({movie_name,review_content,rate}){
-    console.log("go!!!back!!!---post----!!!");
+    console.log("go!!!back!!!---post----!!!"+movie_name);
+    
     const result = await instance.post('/',{movie_name,review_content,rate});
     
     return result.data
 }
 
 export async function deleteReview({id}){
+    console.log("go!!!back!!!---delete----"+id);
     const result = await instance.delete('/'+id,{id});
+    
     return result.data
 }
 

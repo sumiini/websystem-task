@@ -9,7 +9,7 @@ router.use(cors());
 router.get('/',function(req,res,next){
      
      Review.find({},function(err,rev){
-        console.log(rev);
+        //console.log(rev);
          res.status(200).json({
              
              alldata:rev
@@ -44,9 +44,15 @@ router.post('/',function(req,res,next){
 
 });
 
-router.post('/:id',function(req,res,next){
-    console.log(req);
-    //Review.deleteOne({_id:})
+router.delete('/:id',function(req,res,next){
+   
+    Review.deleteOne({_id:req.params.id}).then((result)=>{
+        //console.log(req.body._id)
+        
+      }).catch((err)=>{
+        console.log("error");
+      });
+   
 
 });
 

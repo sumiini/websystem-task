@@ -9,36 +9,36 @@ class ReviewCard extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            review:this.props.review
+            reviews:this.props.review
         } 
-        
+        this.deleteReview = this.deleteReview.bind(this);
+
     }
 
     async deleteReview(){
-        const result = await request.deleteReview(this.state.review._id);
-        //this.props.onDelete(this.state.rev._id);
+        const delid={
+            id:this.props.review._id
+        }
+        console.log("++++++++"+this.props.review._id)
+        const delresult = await request.deleteReview(delid);
+        console.log("========"+this.props.review._id)
+        const result = await this.props.onDelete(delid);
+        //this.props.history.push("/");
+
     }
 
    
 
     render() {
         const {review} = this.props;
-        
+       
 
       return (
           <div>
-              {review.alldata.map((i)=>
-                <div>
-                    {i.movie_name}
-                    {i.review_content}
-                    {stars(i.rate)}
+                    {review.movie_name}
+                    {review.review_content}
+                    {stars(review.rate)}
                     <button onClick={this.deleteReview.bind(this)}>삭제</button>
-
-                </div>
-                 
-              )}
-             
-               
 
           </div>
           
