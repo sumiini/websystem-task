@@ -16,7 +16,7 @@ class ReviewCard extends React.Component {
 
     async deleteReview(){
         const result = await request.deleteReview(this.state.review._id);
-        this.props.onDelete(this.state.rev._id);
+        //this.props.onDelete(this.state.rev._id);
     }
 
    
@@ -27,10 +27,17 @@ class ReviewCard extends React.Component {
 
       return (
           <div>
-              <h2>{review.movie_name}</h2>
-              <h2>{review.review_content}</h2>
-              <div>{stars(review.rate)}</div>
-              <button onClick={this.deleteReview.bind(this)}>삭제</button>
+              {review.alldata.map((i)=>
+                <div>
+                    {i.movie_name}
+                    {i.review_content}
+                    {stars(i.rate)}
+                    <button onClick={this.deleteReview.bind(this)}>삭제</button>
+
+                </div>
+                 
+              )}
+             
                
 
           </div>

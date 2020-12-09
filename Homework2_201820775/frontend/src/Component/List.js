@@ -14,13 +14,16 @@ class List extends React.Component {
 
     deleteReviewById(id){
         const result = this.state.reviews.filter(i=> i._id !==id);
+       
         this.setState({reviews:result});
+        
         
     }
 
     render() {
         if(this.state.reviews.length!==0){
             return (
+                
                 <>
                 <ReviewCard review={this.state.reviews} onDelete={this.deleteReviewById.bind(this)}/>
                 </>

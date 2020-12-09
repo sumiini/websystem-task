@@ -6,8 +6,8 @@ const instance = axios.create({ baseURL: API_DEFAULT });
 export async function getReviews(){
     console.log("go!!!back!!!--get----!!!");
     const result = await instance.get('/');
-    //console.log("result"+result.data.alldata[0].movie_name);
-    return result.data.alldata
+    //console.log("result"+result.data.alldata);
+    return result.data
 }
 
 export async function createReview({movie_name,review_content,rate}){

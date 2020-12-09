@@ -8,13 +8,13 @@ router.use(cors());
 
 router.get('/',function(req,res,next){
      
-     Review.find(function(err,rev){
-         
+     Review.find({},function(err,rev){
+        console.log(rev);
          res.status(200).json({
              
              alldata:rev
          });
-         console.log(rev);
+         
      })
      
      

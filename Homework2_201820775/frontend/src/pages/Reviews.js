@@ -11,7 +11,10 @@ class Reviews extends React.Component{
         };
     }
     async componentDidMount(){
-        this.setState({reviews:request.getReviews()})
+        
+        const result = await request.getReviews();
+        this.setState({reviews:result})
+        console.log("req확인"+result);
     }
 
     
