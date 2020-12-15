@@ -14,7 +14,6 @@ class Reviews extends React.Component{
         
         const result = await request.getReviews();
         this.setState({reviews:result})
-        console.log("req확인"+request.getReviews());
     }
 
     

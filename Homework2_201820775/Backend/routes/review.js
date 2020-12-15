@@ -48,6 +48,9 @@ router.delete('/:id',function(req,res,next){
    
     Review.deleteOne({_id:req.params.id}).then((result)=>{
         //console.log(req.body._id)
+        res.status(200).json({
+            'id' : req.params.id
+        });
         
       }).catch((err)=>{
         console.log("error");

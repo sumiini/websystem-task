@@ -1,0 +1,23 @@
+.linkhome,.linknew{
+    text-decoration: none;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+}
+
+.link{
+    background-color: lemonchiffon;
+}
+.linkhome:hover{
+    color: red;
+}
+.linknew:hover{
+    color: red;
+}
+
+.newmoviename{
+    font-weight: bold;
+}
+.newdiv{
+    text-align: center;
+}

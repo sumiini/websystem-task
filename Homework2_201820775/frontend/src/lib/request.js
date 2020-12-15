@@ -4,24 +4,17 @@ const API_DEFAULT = "http://localhost:3002/";
 const instance = axios.create({ baseURL: API_DEFAULT });
 
 export async function getReviews(){
-    console.log("go!!!back!!!--get----!!!");
     const result = await instance.get('/');
-    //console.log("result"+result.data.alldata);
     return result.data
 }
 
 export async function createReview({movie_name,review_content,rate}){
-    console.log("go!!!back!!!---post----!!!"+movie_name);
-    
     const result = await instance.post('/',{movie_name,review_content,rate});
-    
     return result.data
 }
 
 export async function deleteReview({id}){
-    console.log("go!!!back!!!---delete----"+id);
     const result = await instance.delete('/'+id,{id});
-    
     return result.data
 }
 

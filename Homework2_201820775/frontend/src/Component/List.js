@@ -10,13 +10,12 @@ class List extends React.Component {
         this.state={
             reviews:this.props.data.alldata
         } 
+        //this.deleteReviewById = this.deleteReviewById.bind(this);
     }
 
     deleteReviewById(id){
-        const result = this.state.reviews.filter(i=> i._id !==id);
-        this.setState({reviews:result});
-        
-
+        let result = this.state.reviews.filter(i=> i._id !==id.id );
+        this.setState({reviews:result,});
         
     }
 
@@ -34,6 +33,9 @@ class List extends React.Component {
                 
             );
 
+        }
+        else{
+            return null;
         }
       
     }

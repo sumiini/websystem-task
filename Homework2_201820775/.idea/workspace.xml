@@ -55,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../project/ilovepet" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -68,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607444781472</updated>
       <workItem from="1607444786682" duration="21000" />
+      <workItem from="1607789920241" duration="36000" />
     </task>
     <servers />
   </component>
@@ -84,5 +85,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="345" y="193" key="FileChooserDialogImpl" timestamp="1607789952659">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="345" y="193" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607789952659" />
   </component>
 </project>

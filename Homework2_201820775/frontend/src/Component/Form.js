@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-
+import '../project.css'
 
 class Form extends React.Component {
     constructor(props){
@@ -31,16 +31,22 @@ class Form extends React.Component {
 
     render() {
       return (
-          <div>
+          <div className="newdiv">
                
-                <label>Movie Name</label>
+                <label className="newmoviename">Movie Name</label>
+                <p/>
                 <input name="moviename" ref={this.form.movie_name} ></input>
-                <label>Review Content</label>
+                <p/>
+                <label className="newcontent">Review Content</label>
+                <p/>
                 <input name="reviewcontent" ref={this.form.review_content}></input>
-                <label>Rate</label>
+                <p/>
+                <label className="newrate">Rate</label>
+                <p/>
                 <input name="rate" ref={this.form.rate}></input>
-                <button onClick={this.submit.bind(this)}>제출</button>
-                <button onClick={this.cancel.bind(this)}>취소</button>
+                <p/>
+                <button className="submitbtn" onClick={this.submit.bind(this)}>제출</button>
+                <button className="cancelbtn" onClick={this.cancel.bind(this)}>취소</button>
 
 
           </div>

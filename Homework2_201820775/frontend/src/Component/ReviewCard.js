@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import request from '../lib/request';
 import { stars } from '../lib/star';
-
+import { Link } from "react-router-dom";
 
 class ReviewCard extends React.Component {
     constructor(props){
@@ -19,15 +19,10 @@ class ReviewCard extends React.Component {
         const delid={
             id:this.props.review._id
         }
-        console.log("++++++++"+this.props.review._id)
         const delresult = await request.deleteReview(delid);
-        console.log("========"+this.props.review._id)
         const result = await this.props.onDelete(delid);
-        //this.props.history.push("/");
-
+        
     }
-
-   
 
     render() {
         const {review} = this.props;
@@ -35,10 +30,19 @@ class ReviewCard extends React.Component {
 
       return (
           <div>
-                    {review.movie_name}
-                    {review.review_content}
-                    {stars(review.rate)}
-                    <button onClick={this.deleteReview.bind(this)}>삭제</button>
+              <h4>Movie Name</h4>
+              <p/>
+              {review.movie_name}
+              <p/>
+              <h4>Movie Content</h4>
+              <p/>
+              {review.review_content}
+              <p/>
+              <h4>Rate</h4>
+              <p/>
+              {stars(review.rate)}
+              <p/>
+              <button onClick={this.deleteReview.bind(this)}>삭제</button>
 
           </div>
           
